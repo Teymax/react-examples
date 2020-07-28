@@ -1,0 +1,63 @@
+.game-list {
+  display: flex;
+  flex-direction: column;
+
+  .game-list__games {
+    margin-top: rem(25px);
+  }
+}
+
+.game {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: rem(15px);
+  max-width: rem(515px);
+  width: 100%;
+
+  .game__content {
+    display: flex;
+  }
+
+  .game__ball-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 57px;
+    height: 57px;
+    padding: rem(10px);
+    margin-right: rem(10px);
+  }
+
+  .game__info {
+    font-weight: 500;
+  }
+
+  .game__play {
+    margin-top: rem(20px);
+  }
+
+  .game__price {
+    background-color: $mediumGray;
+    max-width: rem(94px);
+    padding: rem(2px 8px);
+    border-radius: 2px;
+    color: #fff;
+    opacity: 0.7;
+    background: #0d2950;
+  }
+
+  .game__time {
+    margin: rem(5px 0);
+    color: #8b98ab;
+  }
+
+  .game__price,
+  .game__time {
+    text-transform: uppercase;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #dadadd;
+    margin-bottom: rem(15px);
+  }
+}

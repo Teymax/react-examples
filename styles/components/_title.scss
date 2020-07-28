@@ -1,0 +1,27 @@
+.title {
+  color: $dark;
+
+  &.title_display {
+    font-size: $fontSizeDisplay;
+  }
+
+  &.title_big-display {
+    font-size: $fontSizeBigDisplay;
+  }
+
+  &.title_subtitle {
+    font-size: $fontSizeSubtitle;
+  }
+
+  &.title_headline {
+    font-size: $fontSizeHeadline;
+  }
+
+  &.title_caption {
+    font-size: $fontSizeCaption;
+  }
+
+  &.title_subcaption {
+    font-size: $fontSizeSubcaption;
+  }
+}

@@ -1,0 +1,10 @@
+.dropdown {
+  display: flex;
+  align-items: center;
+
+  .dropdown__title {
+    margin-right: rem(5px);
+    font-weight: 500;
+    color: #000;
+  }
+}
