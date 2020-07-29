@@ -1,7 +1,4 @@
 .game-list {
-  display: flex;
-  flex-direction: column;
-
   .game-list__games {
     margin-top: rem(25px);
   }
@@ -10,8 +7,9 @@
 .game {
   display: flex;
   justify-content: space-between;
-  padding-bottom: rem(15px);
+  padding: rem(16px 8px);
   max-width: rem(515px);
+  height: rem(91px);
   width: 100%;
 
   .game__content {
@@ -33,7 +31,7 @@
   }
 
   .game__play {
-    margin-top: rem(20px);
+    margin-top: rem(10px);
   }
 
   .game__price {
@@ -58,6 +56,5 @@
 
   &:not(:last-child) {
     border-bottom: 1px solid #dadadd;
-    margin-bottom: rem(15px);
   }
 }

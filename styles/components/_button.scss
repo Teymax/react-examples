@@ -7,15 +7,23 @@
   justify-content: center;
   align-items: center;
   font-family: 'Roboto', sans-serif;
-
+  cursor: pointer;
+  transition: background-color 0.3s;
   outline: none;
 
   &.btn-primary {
-    background-color: $green;
+    background-color: $primaryBtnColor;
+    &:hover {
+      background-color: $secondaryBtnColorHover;
+    }
   }
 
   &.btn-secondary {
-    background-color: $darkBlue;
+    background-color: $secondaryBtnColor;
+
+    &:hover {
+      background-color: $secondaryBtnColorHover;
+    }
   }
 
   &.btn-normal {

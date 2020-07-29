@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseBallSvg from '../../public/img/baseball.svg'
+import ArrowDownSvg from '../../public/img/arrow_down.svg'
 
 const GameListItem = () => (
   <div className='game'>
@@ -9,9 +10,9 @@ const GameListItem = () => (
       </div>
 
       <div className='game__info'>
-        <div className='game__title title title_subtitle'>
+        <h4 className='game__title title title_subtitle'>
           Global Soccer Challenge
-        </div>
+        </h4>
         <div className='game__time title title_caption'>
           Ends: APR 15, 6:00PM CDT
         </div>
@@ -27,10 +28,12 @@ const GameListItem = () => (
 
 function GameList() {
   return (
-    <div className='game-list'>
+    <div className='game-list section'>
       <div className='game-list__dropdown dropdown'>
-        <div className='dropdown__title title title_caption'>All Games</div>
-        <div className='dropdown__arrow'>a</div>
+        <p className='dropdown__title title title_caption'>All Games</p>
+        <div className='dropdown__arrow'>
+          <ArrowDownSvg />
+        </div>
       </div>
 
       <div className='game-list__games'>
