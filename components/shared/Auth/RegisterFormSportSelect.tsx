@@ -1,7 +1,7 @@
 import React from 'react'
 import SportCards, { ISportType } from './SportCards'
-import { IRegisterFormState } from 'pages'
 import { MultiFormNav, FormProgressBar, MultiFormHeader } from '../MultiForm'
+import { IRegisterFormState } from '@components/SignUp/RegistrationMultiForm'
 
 const RegisterFormSportSelect = ({
   actions: { next },
@@ -26,7 +26,10 @@ const RegisterFormSportSelect = ({
         <MultiFormHeader
           title={'What are you favorite sports?'}
           subtitle={
-            'We’ll use your slections to create a one of a king gaming experience'
+            <>
+              We’ll use your slections to create a one of a king gaming
+              experience
+            </>
           }
         />
 

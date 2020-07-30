@@ -38,6 +38,10 @@
         margin-right: rem(15px);
       }
 
+      img {
+        height: 100%;
+      }
+
       &:after {
         content: '';
         display: block;

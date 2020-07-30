@@ -21,11 +21,13 @@ const FormInputValidationIcon = ({
   status?: 'error' | 'success' | ''
 }) => <div className={classNames('field__icon', status)}>{getIcon(status)}</div>
 
-const status = 'error'
+const defStatus = 'error'
 function FormInput({
+  status = defStatus,
   label,
   ...inputProps
 }: {
+  status?: any
   label: string
 } & React.HTMLProps<HTMLInputElement>) {
   return (

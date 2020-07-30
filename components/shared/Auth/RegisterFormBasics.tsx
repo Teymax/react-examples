@@ -1,7 +1,7 @@
 import React from 'react'
 import { MultiFormNav, MultiFormHeader, FormProgressBar } from '../MultiForm'
-import { IRegisterFormState } from 'pages'
 import { FormInput } from '@components/UI'
+import { IRegisterFormState } from '@components/SignUp/RegistrationMultiForm'
 
 const RegisterFormBasics = ({
   actions: { next },

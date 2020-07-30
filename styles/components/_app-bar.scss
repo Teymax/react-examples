@@ -1,0 +1,26 @@
+.app-bar {
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  z-index: 10000;
+
+  .app-bar__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .app-bar__link {
+      background-color: $green;
+      border-radius: 10px;
+      padding: 10px;
+      color: #fff;
+    }
+
+    .app-bar__link + .app-bar__link {
+      margin-left: rem(10px);
+    }
+  }
+}

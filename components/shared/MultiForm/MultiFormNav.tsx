@@ -4,11 +4,11 @@ import classNames from 'classnames'
 
 const MultiFormNav = ({ actions: { next }, isActive, isFinalStep = false }) => (
   <div className='form__btns'>
-    <button className='btn form__btn-skip' onClick={next}>
+    <button className='btn form__btn--skip' onClick={next}>
       Skip
     </button>
     <button
-      className={classNames('btn form__btn-next', {
+      className={classNames('btn form__btn form__btn--next', {
         active: isActive,
         'form__btn-final': isFinalStep,
       })}

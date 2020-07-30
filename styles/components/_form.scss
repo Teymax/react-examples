@@ -51,18 +51,22 @@
     align-items: center;
     justify-content: center;
 
-    .form__btn-skip {
+    .form__btn {
+      width: rem(100px);
+      height: rem(40px);
+      transition: background-color 0.3s;
+    }
+
+    .form__btn--skip {
       color: #52504f;
       font-weight: 500;
       font-size: rem(16px);
     }
 
-    .form__btn-next {
-      width: rem(100px);
-      height: rem(40px);
+    .form__btn--next {
       margin-left: rem(20px);
       background-color: #d9d9d9;
-      transition: background-color 0.3s;
+
       pointer-events: none;
 
       &.active {
@@ -82,7 +86,7 @@
       }
     }
 
-    .form__btn-final {
+    .form__btn--final {
       &.active {
         background-color: $primaryBtnColor;
 
