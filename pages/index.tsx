@@ -12,7 +12,9 @@ export default function Home() {
 
       <PromoCardsCarousel />
 
-      <GameList />
+      <div className='container'>
+        <GameList />
+      </div>
     </>
   )
 }

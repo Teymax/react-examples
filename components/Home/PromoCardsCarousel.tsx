@@ -21,7 +21,7 @@ const PromoCardsCarousel = () => {
 
   return (
     <div className='promo-cards section'>
-      <h3 className='promo-cards__title title title_headline'>
+      <h3 className='promo-cards__title title title_headline container'>
         Featured Games
       </h3>
 
