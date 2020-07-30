@@ -3,9 +3,11 @@
   position: relative;
   width: 100%;
   align-items: center;
-  justify-content: center;
-  height: 40px;
+  justify-content: space-between;
+  padding: rem(0 40px);
+  height: rem(100px);
   z-index: 10000;
+  background-color: #fff;
 
   .app-bar__links {
     display: flex;
@@ -13,14 +15,15 @@
     align-items: center;
 
     .app-bar__link {
-      background-color: $green;
-      border-radius: 10px;
-      padding: 10px;
-      color: #fff;
+      letter-spacing: $defaultLetterSpacing;
+      font-weight: 500;
+      font-size: rem(13px);
+
+      color: #8b98ab;
     }
 
     .app-bar__link + .app-bar__link {
-      margin-left: rem(10px);
+      margin-left: rem(20px);
     }
   }
 }

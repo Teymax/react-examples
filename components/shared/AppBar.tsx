@@ -1,9 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
+import AppBarLogoSvg from '../../public/img/app-bar_logo.svg'
 
 function AppBar() {
   return (
     <div className='app-bar'>
+      <div className='app-bar__logo'>
+        <AppBarLogoSvg />
+      </div>
       <div className='app-bar__links'>
         <Link href='/'>
           <a className='app-bar__link'>Home</a>

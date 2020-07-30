@@ -28,7 +28,7 @@ const GameListItem = () => (
 
 function GameList() {
   return (
-    <div className='game-list section'>
+    <div className='game-list section container'>
       <div className='game-list__dropdown dropdown'>
         <p className='dropdown__title title title_caption'>All Games</p>
         <div className='dropdown__arrow'>
