@@ -1,37 +1,95 @@
-.modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  .modal__container {
-    background: #fff;
-    width: 602px;
-    height: 520px;
-    position: relative;
-    z-index: 100;
-    box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
-    padding: rem(40px 60px);
-  }
-}
-
 .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  .form__progress {
+    justify-content: center;
+    margin-bottom: rem(28px);
+  }
+
   .form__header {
     text-align: center;
     margin-bottom: rem(35px);
 
     .form__title {
       font-weight: 500;
-      margin-bottom: rem(5px);
+      margin-bottom: rem(7px);
     }
 
     .form__subtitle {
       color: #52504f;
+    }
+  }
+
+  .form__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  a.form__learn_more {
+    color: $colorLink;
+    cursor: pointer;
+  }
+
+  .form__btn-action {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      max-width: 250px;
+      padding: rem(7px 17px);
+      font-size: rem(16px);
+    }
+  }
+
+  .form__btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .form__btn-skip {
+      color: #52504f;
+      font-weight: 500;
+      font-size: rem(16px);
+    }
+
+    .form__btn-next {
+      width: rem(100px);
+      height: rem(40px);
+      margin-left: rem(20px);
+      background-color: #d9d9d9;
+      transition: background-color 0.3s;
+      pointer-events: none;
+
+      &.active {
+        background-color: $colorLink;
+        pointer-events: all;
+
+        &:hover {
+          background-color: darken($color: $colorLink, $amount: 20);
+        }
+      }
+
+      .next-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: rem(8px);
+      }
+    }
+
+    .form__btn-final {
+      &.active {
+        background-color: $primaryBtnColor;
+
+        &:hover {
+          background-color: $primaryBtnColorHover;
+        }
+      }
     }
   }
 }

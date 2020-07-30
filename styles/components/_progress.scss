@@ -1,0 +1,45 @@
+.progress {
+  display: flex;
+  align-items: center;
+  color: #fff;
+
+  .progress__item {
+    display: flex;
+    align-items: center;
+    max-width: rem(80px);
+    width: 100%;
+
+    &:last-child {
+      width: initial;
+
+      .progress__line {
+        display: none;
+      }
+    }
+
+    .progress__dot {
+      @include flex-center;
+      padding: rem(3px 6px);
+      width: 17px;
+      height: 17px;
+      font-size: rem(11px);
+      font-weight: 500;
+      background: #c4c4c4;
+      border-radius: 50%;
+
+      &.active {
+        background-color: $green;
+      }
+    }
+
+    .progress__line {
+      flex-grow: 1;
+      height: 2px;
+      background-color: #c4c4c4;
+
+      &.active {
+        background-color: $green;
+      }
+    }
+  }
+}

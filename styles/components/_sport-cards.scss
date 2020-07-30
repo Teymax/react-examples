@@ -14,6 +14,13 @@
 
     background: #f4f4f4;
     border-radius: 8px;
+    cursor: pointer;
+    transition: border 0.1s;
+
+    &.active,
+    &:hover {
+      border: 5px solid #065092;
+    }
 
     .sport-card__info {
       font-weight: 500;

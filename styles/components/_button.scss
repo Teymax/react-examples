@@ -10,15 +10,17 @@
   cursor: pointer;
   transition: background-color 0.3s;
   outline: none;
+  background-color: transparent;
 
-  &.btn-primary {
+  &.btn--primary {
     background-color: $primaryBtnColor;
+
     &:hover {
-      background-color: $secondaryBtnColorHover;
+      background-color: $primaryBtnColorHover;
     }
   }
 
-  &.btn-secondary {
+  &.btn--secondary {
     background-color: $secondaryBtnColor;
 
     &:hover {
@@ -26,13 +28,13 @@
     }
   }
 
-  &.btn-normal {
+  &.btn--normal {
     padding: rem(15px 80px);
     font-size: $fontSizeHeadline;
     max-width: rem(226px);
   }
 
-  &.btn-tiny {
+  &.btn--tiny {
     max-width: rem(92px);
     padding: rem(5px 10px);
     font-size: $fontSizeBody1;

@@ -1,0 +1,71 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+  max-width: rem(340px);
+  width: 100%;
+  padding: rem(7px 17px);
+  border-radius: 6px;
+  height: rem(53px);
+  background: #f4f4f4;
+
+  &.success {
+    border-color: $green;
+  }
+
+  &.error {
+    border-color: $red80;
+  }
+
+  .field__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .field__label {
+    font-size: rem(9px);
+    color: #8b98ab;
+  }
+
+  .field__input {
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    flex-grow: 1;
+    border: none;
+    color: #0d2950;
+    font-weight: 500;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+    font-size: rem(13px);
+    outline: none;
+  }
+
+  .field__icon {
+    margin-left: rem(24px);
+    width: 17px;
+    height: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+    &.success {
+      path {
+        fill: $green;
+      }
+    }
+
+    &.error {
+      path {
+        fill: $red80;
+      }
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: rem(16px);
+  }
+}

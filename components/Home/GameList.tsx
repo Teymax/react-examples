@@ -21,7 +21,7 @@ const GameListItem = () => (
     </div>
 
     <div className='game__play'>
-      <button className='btn btn-tiny btn-secondary'>Play</button>
+      <button className='btn btn--tiny btn--secondary'>Play</button>
     </div>
   </div>
 )
