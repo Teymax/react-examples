@@ -20,6 +20,10 @@
     }
   }
 
+  &.btn--link {
+    color: $colorLink;
+  }
+
   &.btn--secondary {
     background-color: $secondaryBtnColor;
 

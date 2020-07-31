@@ -1,5 +1,15 @@
 .section {
+  &:first-of-type {
+    margin-top: rem(15px);
+  }
+
   &:not(:last-child) {
     margin-bottom: rem(45px);
+  }
+
+  .section__head {
+    font-weight: 500;
+    margin-bottom: rem(24px);
+    letter-spacing: $defaultLetterSpacing;
   }
 }

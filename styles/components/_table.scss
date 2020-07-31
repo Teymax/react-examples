@@ -1,0 +1,30 @@
+.table {
+  width: 100%;
+
+  th {
+    text-align: left;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 300%;
+  }
+
+  tr {
+    border-bottom: 1px solid #efefef;
+
+    td + td,
+    th + th {
+      padding-left: rem(30px);
+    }
+  }
+
+  tbody {
+    td {
+      color: #8b98ab;
+      line-height: 490%;
+    }
+
+    .btn {
+      margin-left: auto;
+    }
+  }
+}

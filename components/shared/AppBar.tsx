@@ -1,23 +1,47 @@
 import React from 'react'
 import Link from 'next/link'
 import AppBarLogoSvg from '../../public/img/app-bar_logo.svg'
+import AccountSvg from '../../public/img/account.svg'
+import PicksSvg from '../../public/img/picks.svg'
+import SignOutSvg from '../../public/img/sign_out.svg'
+
+const navLinks = [
+  {
+    name: 'My picks',
+    to: '/my-account/picks',
+    icon: <PicksSvg />,
+  },
+  {
+    name: 'My Account',
+    to: '/my-account',
+    icon: <AccountSvg />,
+  },
+  {
+    name: 'Sign out',
+    to: '/',
+    icon: <SignOutSvg />,
+  },
+]
 
 function AppBar() {
   return (
     <div className='app-bar'>
       <div className='app-bar__logo'>
-        <AppBarLogoSvg />
+        <Link href='/'>
+          <a>
+            <AppBarLogoSvg />
+          </a>
+        </Link>
       </div>
       <div className='app-bar__links'>
-        <Link href='/'>
-          <a className='app-bar__link'>Home</a>
-        </Link>
-        <Link href='/sign-up'>
-          <a className='app-bar__link'>SignUp</a>
-        </Link>
-        <Link href='/sign-in'>
-          <a className='app-bar__link'>SignIn</a>
-        </Link>
+        {navLinks.map(link => (
+          <Link key={link.to} href={link.to}>
+            <a className='app-bar__link'>
+              <div className='app-bar__link-icon'>{link.icon}</div>
+              {link.name}
+            </a>
+          </Link>
+        ))}
       </div>
     </div>
   )

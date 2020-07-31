@@ -1,0 +1,35 @@
+.info {
+  width: 100%;
+  .info__title {
+    font-weight: 500;
+    line-height: 154.3%;
+    color: #8b98ab;
+    text-transform: uppercase;
+    margin-bottom: rem(5px);
+  }
+
+  .info__btn {
+    padding: rem(5px 15px);
+    margin-top: rem(20px);
+    font-size: $fontSizeBody2;
+  }
+
+  .info__item.item {
+    display: flex;
+    justify-content: space-between;
+
+    .item__title {
+      padding: rem(10px 0);
+      font-weight: 500;
+    }
+
+    .item__value {
+      padding: rem(10px 0);
+      color: #8b98ab;
+    }
+  }
+
+  .item + .item {
+    border-top: 1px solid #efefef;
+  }
+}

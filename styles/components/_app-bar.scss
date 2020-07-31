@@ -15,11 +15,40 @@
     align-items: center;
 
     .app-bar__link {
+      display: flex;
+      align-items: center;
       letter-spacing: $defaultLetterSpacing;
       font-weight: 500;
       font-size: rem(13px);
 
       color: #8b98ab;
+      transition: color 0.3s;
+
+      &:hover {
+        color: darken($color: #8b98ab, $amount: 20);
+        .app-bar__link-icon {
+          svg {
+            path {
+              fill: darken($color: #8b98ab, $amount: 20);
+            }
+          }
+        }
+      }
+    }
+
+    .app-bar__link-icon {
+      margin-right: rem(10px);
+      width: 14px;
+      height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        path {
+          transition: fill 0.3s;
+        }
+      }
     }
 
     .app-bar__link + .app-bar__link {

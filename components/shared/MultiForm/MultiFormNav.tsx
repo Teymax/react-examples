@@ -10,7 +10,7 @@ const MultiFormNav = ({ actions: { next }, isActive, isFinalStep = false }) => (
     <button
       className={classNames('btn form__btn form__btn--next', {
         active: isActive,
-        'form__btn-final': isFinalStep,
+        'form__btn--final': isFinalStep,
       })}
       disabled={!isActive}
       onClick={next}>
