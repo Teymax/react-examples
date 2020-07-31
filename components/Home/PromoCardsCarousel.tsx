@@ -28,13 +28,11 @@ const PromoCardsCarousel = () => {
       <div className='promo-cards__carousel-container'>
         <Carousel
           selectedItem={currentSlide}
-          centerMode
           stopOnHover
           showStatus={false}
           showThumbs={false}
           className='promo-cards__carousel'
           infiniteLoop
-          centerSlidePercentage={60}
           showArrows={false}
           showIndicators={false}>
           <PromoCard />

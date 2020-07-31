@@ -1,7 +1,9 @@
 .promo-cards {
+  margin-top: rem(25px);
+
   .promo-cards__title {
     font-weight: 500;
-    margin-bottom: rem(5px);
+    margin-bottom: rem(14px);
     letter-spacing: $defaultLetterSpacing;
   }
 
@@ -27,16 +29,22 @@
       }
     }
 
+    .slider {
+      max-width: 489px;
+      margin: 0 auto;
+    }
+
     .slide {
       text-align: left;
       background: #fff;
-      max-width: 520px;
-      width: 100%;
       overflow: hidden;
       border-radius: 12px;
+      box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.18);
+      min-width: calc(100% - 15px);
 
-      &:not(:last-child) {
-        margin-right: rem(15px);
+      &.selected {
+        margin: rem(0 15px);
+        min-width: 100%;
       }
 
       img {
@@ -63,7 +71,6 @@
     justify-content: flex-end;
     height: 304px;
     margin: 0 auto;
-    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.18);
 
     position: relative;
     padding: rem(16px 24px);

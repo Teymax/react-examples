@@ -1,4 +1,10 @@
 .account-page {
+  margin-top: rem(11px);
+
+  .account-page__header {
+    margin-bottom: rem(25px);
+  }
+
   .account-page__back {
     position: relative;
     display: flex;
