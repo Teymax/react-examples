@@ -2,8 +2,10 @@ import React from 'react'
 import { Carousel } from 'react-responsive-carousel'
 
 const PromoCard = () => (
-  <div className='promo-card'>
-    <img className='promo-card__poster' src='/img/card-bg.jpg' alt='card' />
+  <div
+    className='promo-card'
+    style={{ backgroundImage: 'url("/img/card-bg.jpg")' }}>
+    {/* <img className='promo-card__poster' src= alt='card' /> */}
     <div className='promo-card__content'>
       <h1 className='promo-card__title title title_big-display'>
         <span className='promo-card__price'>$50 PRIZE</span> Bellator FIght
@@ -28,11 +30,12 @@ const PromoCardsCarousel = () => {
       <div className='promo-cards__carousel-container'>
         <Carousel
           selectedItem={currentSlide}
-          stopOnHover
           showStatus={false}
           showThumbs={false}
           className='promo-cards__carousel'
           infiniteLoop
+          autoPlay
+          onChange={item => setCurrentSlide(item)}
           showArrows={false}
           showIndicators={false}>
           <PromoCard />

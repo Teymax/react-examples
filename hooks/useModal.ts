@@ -1,30 +1,12 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { ModalContext } from 'context/ModalContext'
+import { ModalContext } from '../context/Modal'
 
 function useModal(modalJSX: any) {
-  const [isModalVisible, setIsModalVisible] = React.useState(false)
-
-  const context = React.useContext(ModalContext)
-
-  const showModal = () => {
-    setIsModalVisible(true)
-  }
-
-  const hideModal = () => {
-    setIsModalVisible(false)
-  }
+  const { showModal, hideModal, ...ctx } = React.useContext(ModalContext)
 
   React.useEffect(() => {
-    if (isModalVisible) {
-      console.log('here')
-      context.showModal(modalJSX)
-    } else {
-      context.hideModal()
-    }
-
-    return () => context.hideModal()
-  }, [isModalVisible])
+    ctx.setContent(modalJSX)
+  }, [])
 
   return { showModal, hideModal }
 }

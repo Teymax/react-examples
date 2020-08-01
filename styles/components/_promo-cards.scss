@@ -34,17 +34,27 @@
       margin: 0 auto;
     }
 
+    .slide + .slide {
+      margin: rem(0 15px);
+      min-width: calc(100% - 30px);
+    }
+
     .slide {
       text-align: left;
       background: #fff;
       overflow: hidden;
       border-radius: 12px;
-      box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.18);
-      min-width: calc(100% - 15px);
+      box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.25);
+
+      &:first-child {
+        margin-left: -15px;
+        margin-right: 15px;
+        margin: rem(0 15px 0 -15px);
+      }
 
       &.selected {
-        margin: rem(0 15px);
         min-width: 100%;
+        margin: 0;
       }
 
       img {
@@ -66,34 +76,20 @@
   }
 
   .promo-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     height: 304px;
     margin: 0 auto;
-
-    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: rem(16px 24px);
 
     .promo-card__content {
       position: relative;
       z-index: 1;
-    }
-
-    .promo-card__poster {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      overflow: hidden;
-
-      .promo-card__img {
-        position: relative;
-        z-index: -1;
-        height: 100%;
-        width: 100%;
-      }
     }
 
     .promo-card__title {

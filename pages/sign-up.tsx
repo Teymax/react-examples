@@ -2,8 +2,11 @@ import React from 'react'
 import { Modal } from '@components/shared'
 import Head from 'next/head'
 import { RegistrationMultiForm } from '@components/SignUp'
+import { useModal } from '@hooks'
 
 function SignUp() {
+  const { showModal } = useModal(() => <RegistrationMultiForm />)
+
   return (
     <>
       <Head>
@@ -11,9 +14,11 @@ function SignUp() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Modal>
-        <RegistrationMultiForm />
-      </Modal>
+      <div style={{ padding: '20px 0' }}>
+        <button className='btn btn--primary btn--tiny' onClick={showModal}>
+          Show
+        </button>
+      </div>
     </>
   )
 }

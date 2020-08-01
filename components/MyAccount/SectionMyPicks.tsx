@@ -20,7 +20,7 @@ const SectionMyPicks = () => (
         className='picks__table'
         tableInfo={tableInfo}
         renderRow={(item: any, index: any) => (
-          <tr key={index}>
+          <tr key={index + item}>
             <td>{item.date}</td>
             <td>{item.game}</td>
             <td>

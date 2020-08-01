@@ -2,8 +2,11 @@ import React from 'react'
 import { Modal } from '@components/shared'
 import Head from 'next/head'
 import { LoginForm } from '@components/SignIn'
+import { useModal } from '@hooks'
 
 function SignIn() {
+  const { showModal } = useModal(() => <LoginForm />)
+
   return (
     <>
       <Head>
@@ -11,9 +14,11 @@ function SignIn() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Modal>
-        <LoginForm />
-      </Modal>
+      <div style={{ padding: '20px 0' }}>
+        <button className='btn btn--primary btn--tiny' onClick={showModal}>
+          Show
+        </button>
+      </div>
     </>
   )
 }
