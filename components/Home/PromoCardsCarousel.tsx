@@ -34,8 +34,7 @@ const PromoCardsCarousel = () => {
           showThumbs={false}
           className='promo-cards__carousel'
           infiniteLoop
-          autoPlay
-          onChange={item => setCurrentSlide(item)}
+          onChange={(item: any) => setCurrentSlide(item)}
           showArrows={false}
           showIndicators={false}>
           <PromoCard />

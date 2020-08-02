@@ -14,4 +14,36 @@
     justify-content: center;
     cursor: pointer;
   }
+
+  .dropdown__list {
+    display: flex;
+    flex-direction: column;
+
+    .dropdown__item {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      line-height: 42px;
+      letter-spacing: 0.02em;
+      font-size: rem(18px);
+
+      color: #0d2950;
+    }
+
+    .dropdown__item + .dropdown__item {
+      margin-top: rem(10px);
+    }
+
+    .dropdown__item-icon {
+      margin-right: rem(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
 }
