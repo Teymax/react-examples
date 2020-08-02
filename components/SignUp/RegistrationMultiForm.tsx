@@ -1,23 +1,10 @@
 import React from 'react'
+import RegistrationMultiFormBase from './RegistrationMultiFormBase'
+import { useFormik } from 'formik'
 import { ISportType } from '@components/shared/Auth/SportCards'
-import {
-  RegisterFormSportSelect,
-  RegisterFormBasics,
-  RegisterFormLocation,
-  RegisterFormSecurity,
-  RegisterFormConfirmLocation,
-} from '@components/shared'
+import * as Yup from 'yup'
 
-interface IMultiForm {
-  step: number
-  actions?: {
-    prev: () => void
-    next: () => void
-  }
-  handleChange?: any
-}
-
-export interface IRegisterFormState extends IMultiForm {
+export interface IRegisterFormState {
   sportTypes: Array<ISportType>
   basic: {
     firstName: string
@@ -36,100 +23,45 @@ export interface IRegisterFormState extends IMultiForm {
   }
 }
 
-const RegistrationMultiForm = () => {
-  const [registerFormState, setRegisterFormState] = React.useState<
-    IRegisterFormState
-  >({
-    step: 1,
-    sportTypes: [],
-    basic: {
-      firstName: '',
-      lastName: '',
-      birthDate: '',
-      zipCode: '',
+function RegistrationMultiForm() {
+  const formik = useFormik<IRegisterFormState>({
+    initialValues: {
+      sportTypes: [],
+      basic: {
+        firstName: '',
+        lastName: '',
+        birthDate: '',
+        zipCode: '',
+      },
+      location: {
+        address: '',
+        city: '',
+        state: '',
+      },
+      security: {
+        email: '',
+        password: '',
+      },
     },
-    location: {
-      address: '',
-      city: '',
-      state: '',
-    },
-    security: {
-      email: '',
-      password: '',
-    },
+    validationSchema: Yup.object({
+      sportTypes: Yup.array().min(1, 'Select at least one type of sport'),
+      security: Yup.object({
+        email: Yup.string()
+          .email('Invalid email')
+          .required('The field is required'),
+        password: Yup.string()
+          .min(6, 'Password must be at least six character long')
+          .required('The field is required'),
+      }),
+      basic: Yup.object({
+        firstName: Yup.string().min(3, 'At least 3 characters'),
+        lastName: Yup.string().min(3, 'At least 3 characters'),
+      }),
+    }),
+    onSubmit(value) {},
   })
 
-  const prev = () =>
-    setRegisterFormState({
-      ...registerFormState,
-      step: registerFormState.step - 1,
-    })
-
-  const next = () =>
-    setRegisterFormState({
-      ...registerFormState,
-      step: registerFormState.step + 1,
-    })
-
-  const changeFieldHandler = (formType: 'basic' | 'location' | 'security') => (
-    e: any,
-  ) => {
-    const fieldName = e.target.name
-
-    setRegisterFormState({
-      ...registerFormState,
-      [formType]: {
-        ...registerFormState[formType],
-        [fieldName]: e.target.value,
-      },
-    })
-  }
-
-  switch (registerFormState.step) {
-    case 1:
-      return (
-        <RegisterFormSportSelect
-          {...registerFormState}
-          actions={{ prev, next }}
-          onSportTypeChange={(sportTypes: ISportType[]) =>
-            setRegisterFormState({ ...registerFormState, sportTypes })
-          }
-        />
-      )
-
-    case 2:
-      return (
-        <RegisterFormBasics
-          {...registerFormState}
-          actions={{ prev, next }}
-          handleChange={changeFieldHandler('basic')}
-        />
-      )
-
-    case 3:
-      return (
-        <RegisterFormLocation
-          {...registerFormState}
-          actions={{ prev, next }}
-          handleChange={changeFieldHandler('location')}
-        />
-      )
-
-    case 4:
-      return (
-        <RegisterFormSecurity
-          {...registerFormState}
-          actions={{ prev, next }}
-          handleChange={changeFieldHandler('security')}
-        />
-      )
-
-    case 5:
-      return <RegisterFormConfirmLocation next={next} />
-
-    default:
-      return <pre>{JSON.stringify(registerFormState, null, 4)}</pre>
-  }
+  return <RegistrationMultiFormBase formik={formik} />
 }
 
 export default RegistrationMultiForm

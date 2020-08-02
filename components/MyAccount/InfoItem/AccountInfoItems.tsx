@@ -43,12 +43,8 @@ const infoItems = [
 function AccountInfoItems() {
   return (
     <>
-      {infoItems.map(item => (
-        <AccountInfoItem
-          title={item.title}
-          value={item.value}
-          key={item.title}
-        />
+      {infoItems.map((item) => (
+        <AccountInfoItem title={item.title} value={item.value} key={item.title} />
       ))}
     </>
   )

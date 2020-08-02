@@ -1,6 +1,7 @@
 import React from 'react'
 import { MultiFormNav, MultiFormHeader, FormProgressBar } from '../MultiForm'
 import { FormInput } from '@components/UI'
+import { IMultiForm } from '@components/SignUp/RegistrationMultiFormBase'
 import { IRegisterFormState } from '@components/SignUp/RegistrationMultiForm'
 
 const RegisterFormSecurity = ({
@@ -8,7 +9,8 @@ const RegisterFormSecurity = ({
   step,
   security,
   handleChange,
-}: IRegisterFormState) => {
+  formik,
+}: IMultiForm & IRegisterFormState) => {
   return (
     <div className='form'>
       <div className='form__top'>
@@ -26,6 +28,7 @@ const RegisterFormSecurity = ({
             value={security.email}
             onChange={handleChange}
           />
+
           <FormInput
             label={'Password'}
             name='password'
@@ -36,7 +39,7 @@ const RegisterFormSecurity = ({
         </div>
       </div>
 
-      <MultiFormNav actions={{ next }} isActive={true} isFinalStep />
+      <MultiFormNav actions={{ next }} isActive={formik.isValid} isFinalStep />
     </div>
   )
 }

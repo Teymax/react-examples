@@ -30,4 +30,30 @@
       margin-left: rem(12px);
     }
   }
+
+  .account__info {
+    .account__form {
+      &.active {
+        .item {
+          .account__input {
+            pointer-events: all;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            color: #000;
+          }
+        }
+      }
+
+      .item {
+        .account__input {
+          outline: none;
+          pointer-events: none;
+          border: none;
+          font-size: rem(16px);
+          text-align: right;
+          padding: rem(5px 10px);
+        }
+      }
+    }
+  }
 }

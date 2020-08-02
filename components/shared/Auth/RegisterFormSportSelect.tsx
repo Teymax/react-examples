@@ -1,6 +1,7 @@
 import React from 'react'
 import SportCards, { ISportType } from './SportCards'
 import { MultiFormNav, FormProgressBar, MultiFormHeader } from '../MultiForm'
+import { IMultiForm } from '@components/SignUp/RegistrationMultiFormBase'
 import { IRegisterFormState } from '@components/SignUp/RegistrationMultiForm'
 
 const RegisterFormSportSelect = ({
@@ -8,11 +9,11 @@ const RegisterFormSportSelect = ({
   sportTypes,
   onSportTypeChange,
   step,
-}: IRegisterFormState & { onSportTypeChange: any }) => {
+}: IMultiForm & IRegisterFormState & { onSportTypeChange: any }) => {
   const changeSportTypeHandler = (sportType: ISportType) => {
-    if (sportTypes.find(item => item.name === sportType.name)) {
+    if (sportTypes.find((item) => item.name === sportType.name)) {
       return onSportTypeChange(
-        sportTypes.filter(item => item.name !== sportType.name),
+        sportTypes.filter((item) => item.name !== sportType.name)
       )
     }
 
@@ -23,21 +24,16 @@ const RegisterFormSportSelect = ({
     <div className='form'>
       <div className='form__top'>
         <FormProgressBar step={step} />
+
         <MultiFormHeader
           title={'What are you favorite sports?'}
           subtitle={
-            <>
-              We’ll use your slections to create a one of a king gaming
-              experience
-            </>
+            <>We’ll use your slections to create a one of a king gaming experience</>
           }
         />
 
         <div className='form__body'>
-          <SportCards
-            sportTypes={sportTypes}
-            onChange={changeSportTypeHandler}
-          />
+          <SportCards sportTypes={sportTypes} onChange={changeSportTypeHandler} />
         </div>
       </div>
 

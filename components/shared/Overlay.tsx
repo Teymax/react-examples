@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Overlay({ children, action }: any) {
+function Overlay({ children, action }: { children: any; action: () => void }) {
   return (
     <div className='overlay'>
       {children}

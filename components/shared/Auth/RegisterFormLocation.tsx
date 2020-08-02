@@ -1,6 +1,7 @@
 import React from 'react'
 import { MultiFormNav, MultiFormHeader, FormProgressBar } from '../MultiForm'
 import { FormInput } from '@components/UI'
+import { IMultiForm } from '@components/SignUp/RegistrationMultiFormBase'
 import { IRegisterFormState } from '@components/SignUp/RegistrationMultiForm'
 
 const RegisterFormLocation = ({
@@ -8,7 +9,7 @@ const RegisterFormLocation = ({
   handleChange,
   step,
   location,
-}: IRegisterFormState) => {
+}: IMultiForm & IRegisterFormState) => {
   return (
     <div className='form'>
       <div className='form__top'>

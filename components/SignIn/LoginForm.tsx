@@ -1,32 +1,29 @@
 import React from 'react'
-import { MultiFormHeader } from '@components/shared'
-import { FormInput } from '@components/UI'
+import LoginFormBase from './LoginFormBase'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
+
+export interface FormikLoginProps {
+  email: string
+  password: string
+}
 
 function LoginForm() {
-  return (
-    <div className='form'>
-      <div className='form__top'>
-        <MultiFormHeader
-          title={'Login into your account'}
-          subtitle={<>Provide your auth info.</>}
-        />
+  const formik = useFormik<FormikLoginProps>({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: Yup.object({
+      email: Yup.string().email('Invalid email').required('The field is required'),
+      password: Yup.string()
+        .min(6, 'At least 6 characters')
+        .required('The field is required'),
+    }),
+    onSubmit(value) {},
+  })
 
-        <div className='form__body'>
-          <FormInput
-            status='success'
-            label={'Email'}
-            name='email'
-            type='email'
-          />
-          <FormInput label={'Password'} name='password' type='password' />
-        </div>
-      </div>
-
-      <div className='form__btns'>
-        <button className='btn btn--primary form__btn'>Login</button>
-      </div>
-    </div>
-  )
+  return <LoginFormBase formik={formik} />
 }
 
 export default LoginForm
