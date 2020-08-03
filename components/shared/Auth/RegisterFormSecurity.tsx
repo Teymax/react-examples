@@ -13,30 +13,28 @@ const RegisterFormSecurity = ({
 }: IMultiForm & IRegisterFormState) => {
   return (
     <div className='form'>
-      <div className='form__top'>
-        <FormProgressBar step={step} />
-        <MultiFormHeader
-          title={'Security Information'}
-          subtitle={<>Security is a priority for us.</>}
+      <FormProgressBar step={step} />
+      <MultiFormHeader
+        title={'Security Information'}
+        subtitle={<>Security is a priority for us.</>}
+      />
+
+      <div className='form__body'>
+        <FormInput
+          label={'Email'}
+          name='email'
+          type='email'
+          value={security.email}
+          onChange={handleChange}
         />
 
-        <div className='form__body'>
-          <FormInput
-            label={'Email'}
-            name='email'
-            type='email'
-            value={security.email}
-            onChange={handleChange}
-          />
-
-          <FormInput
-            label={'Password'}
-            name='password'
-            type='password'
-            value={security.password}
-            onChange={handleChange}
-          />
-        </div>
+        <FormInput
+          label={'Password'}
+          name='password'
+          type='password'
+          value={security.password}
+          onChange={handleChange}
+        />
       </div>
 
       <MultiFormNav actions={{ next }} isActive={formik.isValid} isFinalStep />

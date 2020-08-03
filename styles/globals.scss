@@ -5,10 +5,20 @@
 @import './mixins/index';
 @import './components/index';
 @import './pages/account';
+@import './pages/game-page';
 
 html,
+body,
+#__next {
+  height: 100vh;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 a {
@@ -25,4 +35,13 @@ a {
 .page {
   overflow: hidden;
   padding-bottom: rem(30px);
+  height: 100%;
+
+  .page__header {
+    margin-bottom: rem(25px);
+  }
+
+  .page__inner {
+    margin-top: rem(11px);
+  }
 }

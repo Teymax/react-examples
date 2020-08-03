@@ -1,0 +1,94 @@
+.game-ground {
+  width: 100%;
+
+  .fight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: rem(15px 0);
+
+    .fight__vs {
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        background: #e9e9e9;
+        width: 25px;
+        height: 1px;
+        left: 50%;
+        transform: translateX(-50%) rotate(90deg);
+      }
+
+      &::before {
+        top: -23px;
+      }
+
+      &::after {
+        bottom: -23px;
+      }
+
+      .fight__vs-text {
+        font-size: rem(22px);
+        font-weight: bold;
+      }
+
+      .fight__time {
+        font-size: rem(12px);
+        margin-top: rem(5px);
+      }
+
+      color: $darkGray;
+    }
+
+    .fighter {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+      .fighter__name {
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: rem(5px 0 8px);
+      }
+
+      .fighter__score {
+        font-size: rem(12px);
+
+        color: $darkGray;
+      }
+
+      .fighter__img {
+        border-radius: 7px;
+        overflow: hidden;
+        position: relative;
+        width: 116px;
+        height: 76px;
+
+        img {
+          display: block;
+          height: 100%;
+          width: 100%;
+        }
+
+        &:after {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          content: '';
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 69.74%,
+            #ffffff 100%
+          );
+        }
+      }
+    }
+  }
+}

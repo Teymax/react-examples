@@ -1,5 +1,4 @@
 import React from 'react'
-import { ISportType } from '@components/shared/Auth/SportCards'
 import {
   RegisterFormSportSelect,
   RegisterFormBasics,
@@ -57,7 +56,7 @@ const RegistrationMultiFormBase = ({
       return (
         <RegisterFormSportSelect
           {...dataToPass}
-          onSportTypeChange={(sportTypes: ISportType[]) =>
+          onSportTypeChange={(sportTypes: string[]) =>
             formik.setFieldValue('sportTypes', sportTypes)
           }
         />

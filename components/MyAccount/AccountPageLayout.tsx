@@ -1,16 +1,12 @@
 import React from 'react'
-import Link from 'next/link'
+import { PageBack } from '@components/shared'
 
 function AccountPageLayout({ children }: any) {
   return (
-    <div className='account-page'>
+    <div className='account-page page__inner'>
       <div className='account-page__header'>
         <div className='container'>
-          <div className='account-page__back'>
-            <Link href='/'>
-              <a>Back</a>
-            </Link>
-          </div>
+          <PageBack text='Back' />
         </div>
       </div>
 

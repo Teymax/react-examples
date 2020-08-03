@@ -12,38 +12,34 @@ const RegisterFormLocation = ({
 }: IMultiForm & IRegisterFormState) => {
   return (
     <div className='form'>
-      <div className='form__top'>
-        <FormProgressBar step={step} />
+      <FormProgressBar step={step} />
 
-        <MultiFormHeader
-          title={'Location Information'}
-          subtitle={
-            <>
-              This will let us k now if you are elligible to play in your state.
-            </>
-          }
+      <MultiFormHeader
+        title={'Location Information'}
+        subtitle={
+          <>This will let us k now if you are elligible to play in your state.</>
+        }
+      />
+
+      <div className='form__body'>
+        <FormInput
+          label={'Address'}
+          name='address'
+          value={location.address}
+          onChange={handleChange}
         />
-
-        <div className='form__body'>
-          <FormInput
-            label={'Address'}
-            name='address'
-            value={location.address}
-            onChange={handleChange}
-          />
-          <FormInput
-            label={'City'}
-            name='city'
-            value={location.city}
-            onChange={handleChange}
-          />
-          <FormInput
-            label={'State'}
-            name='state'
-            value={location.state}
-            onChange={handleChange}
-          />
-        </div>
+        <FormInput
+          label={'City'}
+          name='city'
+          value={location.city}
+          onChange={handleChange}
+        />
+        <FormInput
+          label={'State'}
+          name='state'
+          value={location.state}
+          onChange={handleChange}
+        />
       </div>
 
       <MultiFormNav actions={{ next }} isActive={true} />

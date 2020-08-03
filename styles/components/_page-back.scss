@@ -1,0 +1,24 @@
+.page-back {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  a {
+    position: relative;
+    display: flex;
+    color: #909090;
+
+    &:before {
+      background: url('/img/arrow_left.svg');
+      width: 28px;
+      height: 28px;
+      background-position: center;
+      background-repeat: no-repeat;
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

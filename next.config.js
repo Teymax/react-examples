@@ -1,12 +1,10 @@
 const path = require('path')
 const withPlugins = require('next-compose-plugins')
 const withImages = require('next-images')
-const withCSS = require('@zeit/next-css')
 
 module.exports = withPlugins([withImages], {
-  webpack: config => {
-    config.resolve.alias = {
-      ...(config.resolve.alias || {}),
+  webpack: (config) => {
+    Object.assign(config.resolve.alias, {
       '@': path.resolve(__dirname),
       '@public': path.resolve(__dirname, 'public'),
       '@components': path.resolve(__dirname, 'components'),
@@ -19,7 +17,8 @@ module.exports = withPlugins([withImages], {
       '@styles': path.resolve(__dirname, 'styles'),
       '@services': path.resolve(__dirname, 'services'),
       '@static': path.resolve(__dirname, 'static'),
-    }
+      '@context': path.resolve(__dirname, 'context'),
+    })
 
     return config
   },

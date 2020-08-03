@@ -1,6 +1,8 @@
 import React from 'react'
 import BaseBallSvg from '../../public/img/baseball.svg'
 import ArrowDownSvg from '../../public/img/arrow_down.svg'
+import Link from 'next/link'
+import { Label } from '@components/shared'
 
 const GameListItem = () => (
   <div className='game'>
@@ -10,18 +12,22 @@ const GameListItem = () => (
       </div>
 
       <div className='game__info'>
-        <h4 className='game__title title title_subtitle'>
-          Global Soccer Challenge
-        </h4>
+        <h4 className='game__title title title_subtitle'>Global Soccer Challenge</h4>
         <div className='game__time title title_caption'>
           Ends: APR 15, 6:00PM CDT
         </div>
-        <div className='game__price title title_subcaption'>Prize: $50.00</div>
+
+        <Label text='Prize: $50.00' className='game__price' />
       </div>
     </div>
 
     <div className='game__play'>
-      <button className='btn btn--tiny btn--secondary'>Play</button>
+      <Link
+        as={`/${'Global Soccer Challenge'.split(' ').join('-')}`}
+        href={`/[gameName]`}
+      >
+        <a className='btn btn--tiny btn--secondary'>Play</a>
+      </Link>
     </div>
   </div>
 )

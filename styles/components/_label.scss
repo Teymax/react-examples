@@ -1,0 +1,40 @@
+.label {
+  max-width: rem(64px);
+  height: rem(21px);
+  padding: rem(1px 7px);
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+
+  opacity: 0.7;
+
+  .label__text {
+    color: #fff;
+    font-weight: 500;
+    font-size: rem(12px);
+    line-height: 154.3%;
+    text-transform: uppercase;
+
+    letter-spacing: $defaultLetterSpacing;
+  }
+
+  &.label--default {
+    background: #545c68;
+  }
+
+  &.label--success {
+    background: #00b669;
+  }
+
+  &.label--alert {
+    background: #ea5b49;
+  }
+
+  &.label--warning {
+    background: #fdc023;
+  }
+
+  &.label--info {
+    background: #0b59c4;
+  }
+}

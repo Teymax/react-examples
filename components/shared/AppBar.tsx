@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import AppBarLogoSvg from '../../public/img/app-bar_logo.svg'
 import AccountSvg from '../../public/img/account.svg'
 import PicksSvg from '../../public/img/picks.svg'
 import SignOutSvg from '../../public/img/sign_out.svg'
@@ -52,13 +51,13 @@ function AppBar() {
         <div className='app-bar__logo'>
           <Link href='/'>
             <a>
-              <AppBarLogoSvg />
+              <img src='/img/app-bar_logo.svg' alt='Logo' />
             </a>
           </Link>
         </div>
         <div className='app-bar__links'>
           {matches ? (
-            navLinks.map(link => (
+            navLinks.map((link) => (
               <Link key={link.to} href={link.to}>
                 <a className='app-bar__link'>
                   <div className='app-bar__link-icon'>{link.icon}</div>
@@ -97,7 +96,7 @@ function AppBar() {
       {isVisible && !matches && (
         <div className='dropdown app-bar__dropdown'>
           <div className='dropdown__list'>
-            {navLinks.map(link => (
+            {navLinks.map((link) => (
               <Link key={link.to} href={link.to}>
                 <a className='dropdown__item'>
                   <div className='dropdown__item-icon'>{link.icon}</div>

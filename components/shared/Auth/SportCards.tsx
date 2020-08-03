@@ -1,58 +1,50 @@
 import React from 'react'
 import classNames from 'classnames'
 
-export interface ISportType {
-  name: string
-}
-
 const SportCard = ({
   sportType,
   isActive,
   onChange,
 }: {
-  sportType: ISportType
+  sportType: string
   isActive: boolean
-  onChange: (sportType: ISportType) => void
+  onChange: (sportType: string) => void
 }) => (
   <div
     className={classNames('sport-card', {
       active: isActive,
     })}
-    onClick={() => onChange(sportType)}>
+    onClick={() => onChange(sportType)}
+  >
     <div className='sport-card__icon'>
-      <img
-        src={`/img/sport_types/${sportType.name}.png`}
-        alt={sportType.name}
-      />
+      <img src={`/img/sport_types/${sportType}.png`} alt={sportType} />
     </div>
-    <div className='sport-card__info title title_body2'>{sportType.name}</div>
+    <div className='sport-card__info title title_body2'>{sportType}</div>
   </div>
 )
 
-const sportTypesValue: ISportType[] = [
-  { name: 'basketball' },
-  { name: 'hockey' },
-  { name: 'soccer' },
-  { name: 'football' },
-  { name: 'tennis' },
-  { name: 'basketball' },
+const sportTypesValue: string[] = [
+  'basketball',
+  'hockey',
+  'soccer',
+  'football',
+  'tennis',
+  'basketball',
 ]
 
 const SportCards = ({
   sportTypes,
   onChange,
 }: {
-  sportTypes: ISportType[]
-  onChange: (sportType: ISportType) => void
+  sportTypes: string[]
+  onChange: (sportType: string) => void
 }) => {
   return (
     <div className='sport-cards'>
       {sportTypesValue.map((item, index) => (
         <SportCard
           onChange={onChange}
-          isActive={
-            !!sportTypes.find(sportType => item.name === sportType.name)
-          }
+          isActive={!!sportTypes.find((sportType) => item === sportType)}
           sportType={item}
           key={index}
         />

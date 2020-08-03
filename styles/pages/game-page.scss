@@ -1,0 +1,56 @@
+.game-page {
+  .game-page__header.header {
+    width: 100%;
+
+    .header__top {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .header__footer {
+      text-align: right;
+      margin-top: rem(5px);
+      font-size: rem(10px);
+      padding-bottom: rem(5px);
+
+      color: $darkGray;
+    }
+
+    .header__info {
+      display: flex;
+      flex-direction: column;
+
+      .header__title {
+        font-weight: 500;
+        letter-spacing: $defaultLetterSpacing;
+        margin-bottom: rem(15px);
+      }
+
+      .header__time {
+        color: $darkGray;
+        text-transform: uppercase;
+        margin-bottom: rem(5px);
+        font-weight: 500;
+        font-size: rem(12px);
+      }
+
+      .header__label {
+        max-width: rem(94px);
+      }
+    }
+
+    .header__get-more {
+      background: $darkGray;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      border-radius: 50%;
+      color: #fff;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: rem(5px);
+    }
+  }
+}
