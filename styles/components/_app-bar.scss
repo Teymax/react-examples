@@ -29,6 +29,7 @@
         color: #8b98ab;
         transition: color 0.3s;
 
+        &.active,
         &:hover {
           color: darken($color: #8b98ab, $amount: 20);
           .app-bar__link-icon {
@@ -62,7 +63,6 @@
           font-weight: 500;
           text-transform: uppercase;
           font-size: rem(12px);
-          margin-top: rem(2px);
 
           color: #0d2950;
         }

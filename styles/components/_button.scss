@@ -11,6 +11,11 @@
   transition: background-color 0.3s;
   outline: none;
   background-color: transparent;
+  border: 2px solid transparent;
+
+  &:hover {
+    cursor: url('/img/cursor_hand.svg'), auto;
+  }
 
   &.btn--primary {
     background-color: $primaryBtnColor;
@@ -40,9 +45,28 @@
 
   &.btn--tiny {
     max-width: rem(92px);
-    padding: rem(5px 10px);
+    padding: rem(3px 12px);
     font-size: $fontSizeBody1;
     text-transform: uppercase;
+  }
+
+  &.btn--style_default {
+    color: #000;
+  }
+
+  &.btn--ghost {
+    color: #0d2950;
+    border-color: #0d2950;
+    padding: rem(10px 15px);
+    text-transform: uppercase;
+    font-weight: 500;
+    max-width: rem(110px);
+    width: 100%;
+
+    &:hover {
+      background-color: #0d2950;
+      color: #fff;
+    }
   }
 
   &:disabled {

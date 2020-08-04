@@ -7,6 +7,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Icon from '@material-ui/core/Icon'
 import classNames from 'classnames'
 import { useToggler } from '@hooks'
+import { useRouter } from 'next/router'
 
 const navLinks = [
   {
@@ -44,6 +45,7 @@ const navLinks = [
 function AppBar() {
   const matches = useMediaQuery('(min-width:835px)')
   const { toggle, isVisible } = useToggler()
+  const router = useRouter()
 
   return (
     <div className={classNames('app-bar')}>
@@ -59,7 +61,11 @@ function AppBar() {
           {matches ? (
             navLinks.map((link) => (
               <Link key={link.to} href={link.to}>
-                <a className='app-bar__link'>
+                <a
+                  className={classNames('app-bar__link', {
+                    active: router.pathname === link.to,
+                  })}
+                >
                   <div className='app-bar__link-icon'>{link.icon}</div>
                   {link.name}
                 </a>

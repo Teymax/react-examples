@@ -1,12 +1,9 @@
 import React from 'react'
-import { GamePageLayout, GameHeader } from '@components/Game'
-import { Label, Divider } from '@components/shared'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import { Button } from '@components/UI'
 
-const GameGround = () => (
-  <div className='game-ground'>
-    <div className='game-ground__fight fight'>
+const GameGroundFight = () => (
+  <div className='game-ground__fight fight'>
+    <div className='fight__top'>
       <div className='fight__item fighter'>
         <div className='fighter__img'>
           <img src='/img/fighter_one.png' alt='left' />
@@ -30,26 +27,13 @@ const GameGround = () => (
         </div>
       </div>
     </div>
+
+    <div className='fight__btns'>
+      <Button styleType='ghost'>Favorites</Button>
+      <Button styleType='ghost'>Popular</Button>
+      <Button styleType='ghost'>Random</Button>
+    </div>
   </div>
 )
 
-function GamePage() {
-  const router = useRouter()
-
-  return (
-    <>
-      <Head>
-        <title>ChalkLine | {router.query.gameName}</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-
-      <GamePageLayout>
-        <GameHeader />
-        <Divider />
-        <GameGround />
-      </GamePageLayout>
-    </>
-  )
-}
-
-export default GamePage
+export default GameGroundFight

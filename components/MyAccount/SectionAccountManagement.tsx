@@ -2,6 +2,7 @@ import React from 'react'
 import { AccountPointCards } from './PointCard'
 import { AccountInfoItems } from './InfoItem'
 import classNames from 'classnames'
+import { Button } from '@components/UI'
 
 const SectionAccountManagement = () => {
   const [isFormActive, setIsFormActive] = React.useState(false)
@@ -25,14 +26,15 @@ const SectionAccountManagement = () => {
           >
             <AccountInfoItems />
             <div className='info__action'>
-              <button
-                className='btn btn--secondary info__btn'
+              <Button
+                className='info__btn'
+                styleType='secondary'
                 onClick={(e: any) =>
                   e.preventDefault() || setIsFormActive(!isFormActive)
                 }
               >
                 {isFormActive ? 'Save' : 'Edit my information'}
-              </button>
+              </Button>
             </div>
           </form>
         </div>

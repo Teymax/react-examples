@@ -18,6 +18,7 @@ module.exports = withPlugins([withImages], {
       '@services': path.resolve(__dirname, 'services'),
       '@static': path.resolve(__dirname, 'static'),
       '@context': path.resolve(__dirname, 'context'),
+      '@core': path.resolve(__dirname, 'core'),
     })
 
     return config

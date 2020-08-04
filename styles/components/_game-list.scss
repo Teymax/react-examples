@@ -1,11 +1,14 @@
 .game-list {
   display: flex;
   flex-direction: column;
-  max-width: rem(515px);
-  width: 100%;
+  max-height: 230px;
+  height: 100%;
 
   .game-list__games {
+    height: 100%;
     margin-top: rem(25px);
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 
@@ -13,7 +16,6 @@
   display: flex;
   justify-content: space-between;
   padding: rem(16px 8px);
-  height: rem(91px);
   width: 100%;
 
   .game__content {
@@ -43,7 +45,6 @@
   }
 
   .game__time {
-    margin: rem(5px 0);
     color: #8b98ab;
   }
 

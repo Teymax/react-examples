@@ -1,8 +1,9 @@
 import '@styles/globals.scss'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import { ModalProvider } from '../context/Modal'
+import { ModalProvider } from '@context/Modal'
 import { AppBar } from '@components/shared'
 import Head from 'next/head'
+import { wrapper } from '@store'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -28,4 +29,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp)

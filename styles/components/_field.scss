@@ -24,6 +24,8 @@
   }
 
   .field__label {
+    display: block;
+    line-height: 1;
     font-size: rem(9px);
     color: #8b98ab;
   }

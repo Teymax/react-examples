@@ -111,10 +111,11 @@
     }
 
     .promo-card__info {
-      margin-top: rem(8px);
       letter-spacing: 0.27em;
       font-size: rem(8px);
       text-transform: uppercase;
+      font-weight: bold;
+      color: #c7c7c7;
     }
   }
 }

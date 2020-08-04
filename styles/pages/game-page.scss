@@ -23,13 +23,11 @@
       .header__title {
         font-weight: 500;
         letter-spacing: $defaultLetterSpacing;
-        margin-bottom: rem(15px);
       }
 
       .header__time {
         color: $darkGray;
         text-transform: uppercase;
-        margin-bottom: rem(5px);
         font-weight: 500;
         font-size: rem(12px);
       }

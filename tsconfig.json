@@ -24,8 +24,8 @@
       "@interfaces/*": ["interfaces/*"],
       "@styles": ["styles"],
       "@styles/*": ["styles/*"],
-      "@redux": ["redux"],
-      "@redux/*": ["redux/*"],
+      "@store": ["store"],
+      "@store/*": ["store/*"],
       "@utils": ["utils"],
       "@utils/*": ["utils/*"],
       "@services": ["services"],
@@ -33,7 +33,9 @@
       "@hooks": ["hooks"],
       "@hooks/*": ["hooks/*"],
       "@context": ["context"],
-      "@context/*": ["context/*"]
+      "@context/*": ["context/*"],
+      "@core": ["core"],
+      "@core/*": ["core/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

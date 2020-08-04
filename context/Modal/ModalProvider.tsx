@@ -1,13 +1,19 @@
 import React from 'react'
-import { ModalContext } from './ModalContext'
 import ModalRoot from './ModalRoot'
 
-function ModalProvider({ children }: any) {
+export const ModalContext = React.createContext<any>({
+  isVisible: false,
+  modalContent: null,
+  setContent: null,
+  showModal: null,
+  hideModal: null,
+})
+
+export function ModalProvider({ children }: any) {
   const [modalContent, setModalContent] = React.useState(null!)
   const [isVisible, setIsVisible] = React.useState(false)
 
-  const setContent = (modalComponent: any) =>
-    setModalContent(() => modalComponent)
+  const setContent = (modalComponent: any) => setModalContent(() => modalComponent)
 
   const hideModal = () => setIsVisible(false)
 
@@ -15,11 +21,10 @@ function ModalProvider({ children }: any) {
 
   return (
     <ModalContext.Provider
-      value={{ isVisible, setContent, modalContent, showModal, hideModal }}>
+      value={{ isVisible, setContent, modalContent, showModal, hideModal }}
+    >
       {children}
       <ModalRoot component={modalContent} isVisible={isVisible} />
     </ModalContext.Provider>
   )
 }
-
-export default ModalProvider

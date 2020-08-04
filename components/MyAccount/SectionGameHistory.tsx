@@ -1,5 +1,5 @@
 import React from 'react'
-import { TableData } from '@components/UI'
+import { TableData, Button } from '@components/UI'
 const tableInfo = {
   headers: ['Date', 'Game'],
   body: [
@@ -22,16 +22,16 @@ const SectionGameHistory = () => (
               <td>{item.date}</td>
               <td>{item.game}</td>
               <td>
-                <button className='btn btn--link'>View picks</button>
+                <Button styleType='link'>View picks</Button>
               </td>
             </tr>
           )}
         />
 
         <div className='info__action'>
-          <button className='btn btn--secondary info__btn'>
+          <Button styleType='secondary' className='info__btn'>
             See all game history
-          </button>
+          </Button>
         </div>
       </div>
     </div>

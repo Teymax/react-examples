@@ -3,10 +3,22 @@
 
   .fight {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
     padding: rem(15px 0);
+    background: #fefefe;
+
+    .fight__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .fight__btns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: rem(10px);
+    }
 
     .fight__vs {
       position: relative;
@@ -88,6 +100,143 @@
             #ffffff 100%
           );
         }
+      }
+    }
+  }
+
+  .game-ground__bets.bets {
+    padding: rem(40px 26px);
+    counter-reset: section;
+    background: #ffffff;
+
+    box-shadow: 0px 16px 60px rgba(78, 79, 114, 0.08);
+
+    .bet {
+      padding-bottom: rem(10px);
+
+      &:not(:last-child) {
+        margin-bottom: rem(35px);
+        border-bottom: 1px solid #efefef;
+      }
+
+      .bet__header {
+        display: flex;
+        font-weight: 500;
+        font-size: $fontSizeDisplay;
+
+        letter-spacing: 0.02em;
+
+        color: #000000;
+        margin-bottom: rem(20px);
+
+        &:before {
+          counter-increment: section;
+          content: counter(section);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid #8b98ab;
+          margin-right: rem(10px);
+          border-radius: 50%;
+          width: 24px;
+          height: 24px;
+
+          font-weight: 900;
+          font-size: $fontSizeBody2;
+
+          letter-spacing: 0.02em;
+
+          color: #8b98ab;
+        }
+      }
+
+      .bet__inner {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .bet__fighter {
+        .card__title {
+          text-transform: uppercase;
+        }
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #f4f4f4;
+        border-radius: 6px;
+        padding: rem(13px 22px);
+        color: #0d2950;
+        text-align: center;
+        flex: 1 1 0;
+        transition: background-color 0.3s, color 0.3s;
+
+        &:hover {
+          background-color: $secondaryBtnColorHover;
+          color: #fff;
+          cursor: url('/img/cursor_hand.svg'), auto;
+        }
+
+        &:not(:last-child) {
+          margin-right: rem(8px);
+        }
+
+        .card__title {
+          font-weight: bold;
+          font-size: $fontSizeSubtitle;
+          width: 100%;
+        }
+
+        .card__subtitle {
+          font-size: 11px;
+
+          opacity: 0.4;
+        }
+      }
+
+      .card__add-info {
+        flex-basis: 100%;
+        margin-top: rem(10px);
+        margin-bottom: rem(25px);
+      }
+    }
+  }
+
+  .game-ground__footer.footer {
+    padding: rem(40px 15px);
+
+    .footer__submit {
+      width: 100%;
+
+      .footer__btn {
+        width: 100%;
+        max-width: rem(350px);
+        margin: 0 auto;
+        padding: rem(13px 90px);
+        font-weight: 500;
+        font-size: $fontSizeHeadline;
+        line-height: 154.3%;
+
+        letter-spacing: $defaultLetterSpacing;
+      }
+
+      margin-bottom: rem(20px);
+    }
+
+    .footer__terms {
+      color: #909090;
+      font-size: 15px;
+      text-align: center;
+      line-height: 20px;
+
+      .terms__text--highlight {
+        display: block;
+        margin: 0 auto;
+        color: #0d2950;
+        font-weight: 900;
       }
     }
   }

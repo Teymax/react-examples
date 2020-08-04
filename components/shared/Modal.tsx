@@ -1,6 +1,6 @@
 import React from 'react'
 import Overlay from './Overlay'
-import { ModalContext } from 'context/Modal/ModalContext'
+import { ModalContext } from '@context/Modal'
 
 function Modal({ children }: any) {
   const { hideModal } = React.useContext(ModalContext)
