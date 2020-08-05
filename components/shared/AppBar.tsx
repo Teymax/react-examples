@@ -16,8 +16,8 @@ const navLinks = [
     icon: <PicksSvg />,
   },
   {
-    name: 'Home',
-    to: '/',
+    name: 'Splash',
+    to: '/splash',
     icon: <PicksSvg />,
   },
   {

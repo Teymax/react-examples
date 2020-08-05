@@ -17,7 +17,9 @@ function MyApp({ Component, pageProps }) {
           rel='stylesheet'
           href='https://fonts.googleapis.com/icon?family=Material+Icons'
         />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
+
       <div className='page'>
         <ModalProvider>
           <AppBar />

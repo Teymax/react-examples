@@ -26,7 +26,6 @@ function GamePage() {
     <>
       <Head>
         <title>ChalkLine | Game №{router.query.id}</title>
-        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <GamePageLayout>

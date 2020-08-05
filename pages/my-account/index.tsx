@@ -11,7 +11,6 @@ function MyAccount() {
     <>
       <Head>
         <title>ChalkLine | My Account</title>
-        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <AccountPageLayout>

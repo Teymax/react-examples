@@ -10,7 +10,6 @@ function SignUp() {
   return (
     <>
       <Head>
-        <title>ChalkLine | SignUp</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 

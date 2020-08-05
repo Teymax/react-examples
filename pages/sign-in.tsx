@@ -11,7 +11,6 @@ function SignIn() {
     <>
       <Head>
         <title>ChalkLine | Sign In</title>
-        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'center' }}>
