@@ -1,0 +1,121 @@
+.leaderboard {
+  .leaderboard__title {
+    font-size: rem(22px);
+    font-weight: 500;
+  }
+
+  .leaderboard__card-line {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: rem(17px);
+
+    .leaderboard__card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      height: 28px;
+      padding: rem(4px 11px);
+      color: #fff;
+      font-weight: 500;
+      font-size: $fontSizeCaption;
+      background: #e8e8e8;
+      transition: background 0.3s;
+      cursor: pointer;
+
+      &.active,
+      &:hover {
+        background: #0d2950;
+      }
+
+      border-radius: 45px;
+
+      &:not(:last-child) {
+        margin-right: rem(8px);
+      }
+    }
+  }
+
+  .leaderboard__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: rem(30px);
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: #c4c4c4;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($color: #c4c4c4, $amount: 30);
+      }
+
+      &:not(:last-child) {
+        margin-right: rem(15px);
+      }
+    }
+  }
+
+  .leaderboard__table {
+    width: 100%;
+
+    tbody {
+      .table__row--highlighted {
+        background-color: #0d2950;
+
+        overflow: hidden;
+
+        td {
+          color: #fff;
+          font-weight: bold;
+
+          &:first-child {
+            border-collapse: separate;
+            border-radius: 15px 0px 0px 15px;
+          }
+
+          &:last-child {
+            color: #fff;
+          }
+        }
+      }
+
+      td {
+        color: #2f2f2f;
+        line-height: 299%;
+
+        &:first-child {
+          text-align: center;
+          width: 40px;
+          padding-left: rem(10px);
+        }
+
+        &:last-child {
+          font-weight: 500;
+          text-align: right;
+
+          color: #0d2950;
+          padding-right: rem(20px);
+        }
+      }
+    }
+  }
+
+  .leaderboard__body {
+    .leaderboard__date {
+      font-weight: 500;
+      font-size: $fontSizeSubtitle;
+      line-height: 300%;
+      text-transform: uppercase;
+
+      color: #000000;
+      margin-bottom: rem(15px);
+    }
+  }
+}

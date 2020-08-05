@@ -10,7 +10,7 @@
 html,
 body,
 #__next {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 body {
@@ -43,7 +43,7 @@ a {
     margin-bottom: rem(25px);
   }
 
-  .page__inner {
-    margin-top: rem(11px);
+  .page__body {
+    margin-top: rem(25px);
   }
 }

@@ -11,6 +11,10 @@
   tr {
     border-bottom: 1px solid #efefef;
 
+    &:first-child {
+      border-top: 1px solid #efefef;
+    }
+
     td + td,
     th + th {
       padding-left: rem(30px);

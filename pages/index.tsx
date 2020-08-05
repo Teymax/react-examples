@@ -9,9 +9,11 @@ export default function Home() {
         <title>ChalkLine</title>
       </Head>
 
-      <PromoCardsCarousel />
+      <div className='page__body'>
+        <PromoCardsCarousel />
 
-      <GameList />
+        <GameList />
+      </div>
     </>
   )
 }

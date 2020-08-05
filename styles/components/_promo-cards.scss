@@ -1,6 +1,4 @@
 .promo-cards {
-  margin-top: rem(25px);
-
   .promo-cards__title {
     font-weight: 500;
     margin-bottom: rem(14px);
@@ -42,8 +40,6 @@
     .slide {
       text-align: left;
       background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
       transition: margin 0.3s;
 
       &:first-child {
@@ -54,6 +50,10 @@
 
       &.selected {
         min-width: 100%;
+        @media screen and(max-width:835px) {
+          padding: rem(0 15px);
+        }
+
         margin: 0;
       }
 
@@ -66,10 +66,15 @@
         display: block;
         position: absolute;
         top: 0;
-
         bottom: 0;
         left: 0;
         right: 0;
+        border-radius: 12px;
+
+        @media screen and(max-width:835px) {
+          margin: rem(0 15px);
+        }
+
         background: linear-gradient(
           0deg,
           rgba(0, 0, 0, 0.9) 0%,
@@ -90,6 +95,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: rem(16px 24px);
+    border-radius: 12px;
 
     .promo-card__content {
       position: relative;

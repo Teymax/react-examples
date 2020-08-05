@@ -4,7 +4,7 @@ import { PageBack } from '@components/shared'
 function GamePageLayout({ children }: any) {
   return (
     <>
-      <div className='page__inner game-page'>
+      <div className='page__body game-page'>
         <div className='game-page__header page__header'>
           <div className='container'>
             <PageBack text='UFC Games' />

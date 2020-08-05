@@ -4,24 +4,31 @@ function TableData({
   tableInfo,
   renderRow,
   className = '',
+  children,
 }: {
   tableInfo: {
-    headers: string[]
+    headers?: string[]
     body: any
   }
-  renderRow: any
+  renderRow: (item: any, index: number | string) => void
   className?: string
+  children?: any
 }) {
   return (
     <table className={'table ' + className}>
-      <thead>
-        <tr>
-          {tableInfo.headers.map((header, index) => (
-            <th key={index}>{header}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>{tableInfo.body.map((item: any) => renderRow(item))}</tbody>
+      {tableInfo.headers && (
+        <thead>
+          <tr>
+            {tableInfo.headers.map((header, index) => (
+              <th key={index}>{header}</th>
+            ))}
+          </tr>
+        </thead>
+      )}
+      <tbody>
+        {tableInfo.body.map((item: any, index: any) => renderRow(item, index))}
+        {children}
+      </tbody>
     </table>
   )
 }

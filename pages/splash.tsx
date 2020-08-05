@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import { SplashSection } from '@components/Splash'
 
-function Splash() {
+function SplashPage() {
   return (
     <>
       <Head>
@@ -14,4 +14,4 @@ function Splash() {
   )
 }
 
-export default Splash
+export default SplashPage

@@ -25,6 +25,11 @@ const navLinks = [
     to: '/my-account',
     icon: <AccountSvg />,
   },
+  {
+    name: 'Leaderboard',
+    to: '/leaderboard',
+    icon: <AccountSvg />,
+  },
   // {
   //   name: 'Sign out',
   //   to: '/',
