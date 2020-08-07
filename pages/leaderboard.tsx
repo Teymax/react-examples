@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { LeaderboardSection } from '@components/Leaderboard'
+import { PageContentWrapper } from '@components/shared'
 
 function LeaderboardPage() {
   return (
@@ -9,9 +10,9 @@ function LeaderboardPage() {
         <title>ChalkLine | Leaderboard</title>
       </Head>
 
-      <div className='page__body'>
+      <PageContentWrapper>
         <LeaderboardSection />
-      </div>
+      </PageContentWrapper>
     </>
   )
 }

@@ -30,6 +30,11 @@ const navLinks = [
     to: '/leaderboard',
     icon: <AccountSvg />,
   },
+  {
+    name: 'Popular Picks',
+    to: '/popular-picks',
+    icon: <AccountSvg />,
+  },
   // {
   //   name: 'Sign out',
   //   to: '/',

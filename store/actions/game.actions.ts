@@ -2,7 +2,6 @@ import { ThunkAction } from 'redux-thunk'
 import { RootState } from 'store/reducers'
 import { AppDispatch } from 'store'
 import { Action } from 'redux'
-import { customAxios } from 'core'
 import {
   GAME_MULTIPLE_ADD,
   IAddMultipleGamePayload,
@@ -36,8 +35,6 @@ const actions = {
         const res = await gameService.fetchGames()
 
         const games = res.data
-
-        console.log(games)
 
         dispatch(actions.setGames({ games }))
       } catch (e) {

@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { PromoCardsCarousel, GameList } from '@components/Home'
+import { PageContentWrapper } from '@components/shared'
 
 export default function Home() {
   return (
@@ -9,11 +10,11 @@ export default function Home() {
         <title>ChalkLine</title>
       </Head>
 
-      <div className='page__body'>
+      <PageContentWrapper>
         <PromoCardsCarousel />
 
         <GameList />
-      </div>
+      </PageContentWrapper>
     </>
   )
 }

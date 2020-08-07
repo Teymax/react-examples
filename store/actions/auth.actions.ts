@@ -1,0 +1,73 @@
+import { ThunkAction } from 'redux-thunk'
+import { RootState } from 'store/reducers'
+import { AppDispatch } from 'store'
+import { Action } from 'redux'
+import { userService } from '@services'
+import {
+  IUser,
+  AUTH_SET_DATA,
+  AuthActionType,
+  IAuthPayload,
+} from '@store/types/auth.types'
+import jwtDecode from 'jwt-decode'
+
+const actions = {
+  setAuthData({ token, user }: IAuthPayload): AuthActionType {
+    return {
+      type: AUTH_SET_DATA,
+      payload: {
+        token,
+        user,
+      },
+    }
+  },
+  loginRequest(user: IUser): ThunkAction<void, RootState, IUser, Action<void>> {
+    return async (dispatch: AppDispatch) => {
+      try {
+        const res = await userService.login(user)
+
+        const { token } = res.data
+
+        localStorage.setItem('token', token)
+
+        const userDecoded = jwtDecode(token) as IUser
+
+        console.log('decode', userDecoded)
+
+        dispatch(
+          actions.setAuthData({
+            token,
+            user: userDecoded,
+          })
+        )
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  },
+  registerRequest({
+    password,
+    username,
+  }): ThunkAction<void, RootState, IUser, Action<void>> {
+    return async (dispatch: AppDispatch) => {
+      try {
+        const res = await userService.register({ password, username })
+
+        const user = res.data
+
+        dispatch(
+          actions.setAuthData({
+            token: '',
+            user,
+          })
+        )
+
+        console.log(user)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  },
+}
+
+export default actions

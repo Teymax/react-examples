@@ -1,8 +1,7 @@
 import React from 'react'
 import {
-  RegisterFormSportSelect,
   RegisterFormBasics,
-  RegisterFormLocation,
+  RegisterFormAdditionalSecurity,
   RegisterFormSecurity,
   RegisterFormConfirmLocation,
 } from '@components/shared'
@@ -19,6 +18,25 @@ export interface IMultiForm {
   formik?: FormikProps<IRegisterFormState>
 }
 
+const selectForm = (step: number, dataToPass: any) => {
+  switch (step) {
+    case 1:
+      return <RegisterFormBasics {...dataToPass} />
+
+    case 2:
+      return <RegisterFormSecurity {...dataToPass} />
+
+    case 3:
+      return <RegisterFormAdditionalSecurity {...dataToPass} />
+
+    case 4:
+      return <RegisterFormConfirmLocation {...dataToPass} />
+
+    default:
+      return <RegisterFormBasics {...dataToPass} />
+  }
+}
+
 const RegistrationMultiFormBase = ({
   formik,
 }: {
@@ -26,72 +44,22 @@ const RegistrationMultiFormBase = ({
 }) => {
   const [step, setStep] = React.useState<number>(1)
 
-  const prev = () => setStep(step - 1)
+  const prev = (e: any) => e.preventDefault() || setStep(step - 1)
 
-  const next = () => setStep(step + 1)
+  const next = (e: any) => e.preventDefault() || setStep(step + 1)
 
-  const changeFieldHandler = (formType: 'basic' | 'location' | 'security') => (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const fieldName = e.target.name
-
-    formik.setFieldValue(formType, {
-      ...formik.values[formType],
-      [fieldName]: e.target.value,
-    })
+  const dataToPass = {
+    ...formik.values,
+    formik,
+    step,
+    actions: { prev, next },
   }
 
-  const dataToPass = React.useMemo(
-    () => ({
-      ...formik.values,
-      formik,
-      step,
-      actions: { prev, next },
-    }),
-    [step, formik.values]
+  return (
+    <form className='form' onSubmit={next}>
+      {selectForm(step, dataToPass)}
+    </form>
   )
-
-  switch (step) {
-    case 1:
-      return (
-        <RegisterFormSportSelect
-          {...dataToPass}
-          onSportTypeChange={(sportTypes: string[]) =>
-            formik.setFieldValue('sportTypes', sportTypes)
-          }
-        />
-      )
-
-    case 2:
-      return (
-        <RegisterFormBasics
-          {...dataToPass}
-          handleChange={changeFieldHandler('basic')}
-        />
-      )
-
-    case 3:
-      return (
-        <RegisterFormLocation
-          {...dataToPass}
-          handleChange={changeFieldHandler('location')}
-        />
-      )
-
-    case 4:
-      return (
-        <RegisterFormSecurity
-          {...dataToPass}
-          handleChange={changeFieldHandler('security')}
-        />
-      )
-
-    case 5:
-      return <RegisterFormConfirmLocation next={next} />
-
-    default:
-      return <pre>{JSON.stringify(formik.values, null, 4)}</pre>
-  }
 }
 
 export default RegistrationMultiFormBase

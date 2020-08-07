@@ -7,38 +7,54 @@ import { IRegisterFormState } from '@components/SignUp/RegistrationMultiForm'
 const RegisterFormSecurity = ({
   actions: { next },
   step,
-  security,
-  handleChange,
   formik,
 }: IMultiForm & IRegisterFormState) => {
   return (
-    <div className='form'>
+    <>
       <FormProgressBar step={step} />
-      <MultiFormHeader
-        title={'Security Information'}
-        subtitle={<>Security is a priority for us.</>}
-      />
 
-      <div className='form__body'>
-        <FormInput
-          label={'Email'}
-          name='email'
-          type='email'
-          value={security.email}
-          onChange={handleChange}
+      <div className='form__img'></div>
+
+      <div className='form__content'>
+        <MultiFormHeader
+          title={'Some details & Some Security'}
+          subtitle={<>Let’s keep your account save & secure</>}
         />
 
-        <FormInput
-          label={'Password'}
-          name='password'
-          type='password'
-          value={security.password}
-          onChange={handleChange}
+        <div className='form__body'>
+          <FormInput
+            label={'First name'}
+            name='firstName'
+            placeholder='First Name'
+            formik={formik}
+          />
+
+          <FormInput
+            label={'Last name'}
+            name='lastName'
+            placeholder='Last Name'
+            formik={formik}
+          />
+
+          <FormInput
+            label={'Password'}
+            name='password'
+            type='password'
+            placeholder='Password'
+            formik={formik}
+          />
+        </div>
+
+        <MultiFormNav
+          actions={{ next }}
+          isActive={
+            !formik.errors.firstName &&
+            !formik.errors.lastName &&
+            !formik.errors.password
+          }
         />
       </div>
-
-      <MultiFormNav actions={{ next }} isActive={formik.isValid} isFinalStep />
-    </div>
+    </>
   )
 }
 

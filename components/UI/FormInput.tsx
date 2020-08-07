@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import SuccessMarkSvg from '../../public/img/success_mark.svg'
 import ErrorMarkSvg from '../../public/img/error_mark.svg'
 import { validateField } from '@utils'
+import { FormikProps } from 'formik'
 
 const getIcon = (status: 'error' | 'success' | '') => {
   switch (status) {
@@ -24,30 +25,32 @@ const FormInputValidationIcon = ({
 
 function FormInput({
   label = '',
-  errorCheck = null,
+  formik,
   ...inputProps
 }: {
   label?: string
-  errorCheck?: { touched: any; errors: any }
+  formik: FormikProps<any>
 } & React.HTMLProps<HTMLInputElement>) {
-  const status = React.useMemo(
-    () =>
-      errorCheck &&
-      validateField(inputProps.name, {
-        errors: errorCheck.errors || {},
-        touched: errorCheck.touched || {},
-      }),
-    [errorCheck]
-  )
+  const status = React.useMemo(() => validateField(inputProps.name, formik), [
+    formik,
+  ])
 
   return (
     <div className={classNames('field', status)}>
-      <label htmlFor='' className='field__label'>
-        {label}
-      </label>
+      {inputProps.value && (
+        <label htmlFor='' className='field__label'>
+          {label}
+        </label>
+      )}
       <div className='field__wrap'>
-        <input {...inputProps} className='field__input' />
-        {errorCheck && <FormInputValidationIcon status={status} />}
+        <input
+          {...inputProps}
+          className='field__input'
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values[inputProps.name]}
+        />
+        {formik.errors && <FormInputValidationIcon status={status} />}
       </div>
     </div>
   )

@@ -2,6 +2,8 @@ import React from 'react'
 import LoginFormBase from './LoginFormBase'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import { useDispatch } from 'react-redux'
+import { authActions } from '@store/actions'
 
 export interface FormikLoginProps {
   email: string
@@ -9,6 +11,8 @@ export interface FormikLoginProps {
 }
 
 function LoginForm() {
+  const dispatch = useDispatch()
+
   const formik = useFormik<FormikLoginProps>({
     initialValues: {
       email: '',
@@ -20,7 +24,14 @@ function LoginForm() {
         .min(6, 'At least 6 characters')
         .required('The field is required'),
     }),
-    onSubmit(value) {},
+    onSubmit(value) {
+      const loginData = {
+        username: value.email,
+        password: value.password,
+      }
+
+      dispatch(authActions.loginRequest(loginData))
+    },
   })
 
   return <LoginFormBase formik={formik} />

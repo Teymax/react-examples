@@ -1,9 +1,9 @@
 import React from 'react'
-import { PageBack } from '@components/shared'
+import { PageBack, PageContentWrapper } from '@components/shared'
 
 function AccountPageLayout({ children }: any) {
   return (
-    <div className='account-page page__body'>
+    <PageContentWrapper className='account-page'>
       <div className='account-page__header'>
         <div className='container'>
           <PageBack text='Back' />
@@ -11,7 +11,7 @@ function AccountPageLayout({ children }: any) {
       </div>
 
       {children}
-    </div>
+    </PageContentWrapper>
   )
 }
 

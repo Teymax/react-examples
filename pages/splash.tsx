@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { SplashSection } from '@components/Splash'
+import { PageContentWrapper } from '@components/shared'
 
 function SplashPage() {
   return (
@@ -9,7 +10,9 @@ function SplashPage() {
         <title>ChalkLine | Splash</title>
       </Head>
 
-      <SplashSection />
+      <PageContentWrapper>
+        <SplashSection />
+      </PageContentWrapper>
     </>
   )
 }

@@ -1,19 +1,17 @@
 import React from 'react'
-import { PageBack } from '@components/shared'
+import { PageBack, PageContentWrapper } from '@components/shared'
 
 function GamePageLayout({ children }: any) {
   return (
-    <>
-      <div className='page__body game-page'>
-        <div className='game-page__header page__header'>
-          <div className='container'>
-            <PageBack text='UFC Games' />
-          </div>
+    <PageContentWrapper className='game-page'>
+      <div className='game-page__header page__header'>
+        <div className='container'>
+          <PageBack text='UFC Games' />
         </div>
-
-        <div className='container'>{children}</div>
       </div>
-    </>
+
+      <div className='container'>{children}</div>
+    </PageContentWrapper>
   )
 }
 

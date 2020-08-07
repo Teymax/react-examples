@@ -7,60 +7,54 @@ import { IRegisterFormState } from '@components/SignUp/RegistrationMultiForm'
 const RegisterFormBasics = ({
   actions: { next },
   step,
-  basic,
   formik,
-  handleChange,
 }: IRegisterFormState & IMultiForm) => {
   return (
-    <div className='form'>
+    <>
       <FormProgressBar step={step} />
-      <MultiFormHeader
-        title={'Let’s confirm some details'}
-        subtitle={<>Lets get the basics setup to get you playing!</>}
-      />
 
-      <div className='form__body'>
-        <FormInput
-          label={'First name'}
-          name='firstName'
-          onChange={handleChange}
-          onBlur={formik.handleBlur}
-          value={basic.firstName}
-          errorCheck={{
-            errors: formik.errors.basic,
-            touched: formik.touched,
-          }}
+      <div className='form__img'></div>
+
+      <div className='form__content'>
+        <MultiFormHeader
+          title={'Let’s get the basics'}
+          subtitle={<>We’ll need a little informations to get yoiu going.</>}
         />
 
-        <FormInput
-          label={'Last name'}
-          name='lastName'
-          onChange={handleChange}
-          onBlur={formik.handleBlur}
-          value={basic.lastName}
-          errorCheck={{
-            errors: formik.errors.basic,
-            touched: formik.touched,
-          }}
-        />
+        <div className='form__body'>
+          <FormInput
+            label={'Email'}
+            name='email'
+            type='email'
+            formik={formik}
+            placeholder='Your e-mail *'
+          />
 
-        <FormInput
-          label={'Date of Birth'}
-          name='birthDate'
-          onChange={handleChange}
-          value={basic.birthDate}
-        />
+          <FormInput
+            label={'Date of Birth'}
+            name='birthDate'
+            placeholder='Date of birth *'
+            formik={formik}
+          />
 
-        <FormInput
-          label={'Zipcode'}
-          name='zipCode'
-          onChange={handleChange}
-          value={basic.zipCode}
+          <FormInput
+            label={'Zipcode'}
+            name='zipCode'
+            placeholder='Zip *'
+            formik={formik}
+          />
+        </div>
+
+        <MultiFormNav
+          actions={{ next }}
+          isActive={
+            !formik.errors.zipCode &&
+            !formik.errors.birthDate &&
+            !formik.errors.email
+          }
         />
       </div>
-
-      <MultiFormNav actions={{ next }} isActive={true} />
-    </div>
+    </>
   )
 }
 

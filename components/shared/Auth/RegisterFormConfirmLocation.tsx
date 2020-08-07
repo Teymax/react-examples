@@ -1,39 +1,32 @@
 import React from 'react'
-import { MultiFormHeader } from '../MultiForm'
-import RegisterLocationSvg from '../../../public/img/register_location.svg'
+import { MultiFormHeader, FormProgressBar, MultiFormNav } from '../MultiForm'
+import { FormInput } from '@components/UI'
 
-const RegisterFormConfirmLocation = ({ next }) => {
+const RegisterFormConfirmLocation = ({ next, step, formik }) => {
   return (
-    <div className='form'>
-      <MultiFormHeader
-        title={'Oh! One last thing'}
-        subtitle={
-          <>
-            You’ll need to install our location validator,{' '}
-            <a className='form__learn_more'>Learn More</a>
-          </>
-        }
-      />
+    <>
+      <FormProgressBar step={step} />
 
-      <div className='form__body'>
-        <div className='form__sketch'>
-          <RegisterLocationSvg />
-        </div>
-        <div className='form__btn-action'>
-          <button className='btn btn--primary'>Download Location Validator</button>
-        </div>
+      <div className='form__img'></div>
 
-        <div className='form__btn-action'>
-          <button
-            className='btn btn--secondary'
-            onClick={next}
-            style={{ marginTop: 20 }}
-          >
-            Check data
-          </button>
+      <div className='form__content'>
+        <MultiFormHeader
+          title={'Section Title'}
+          subtitle={<>Let’s keep your account save & secure</>}
+        />
+
+        <div className='form__body'>
+          <FormInput
+            label={'Social Security Number'}
+            name='securityNumber'
+            placeholder='Social Security Number'
+            formik={formik}
+          />
         </div>
       </div>
-    </div>
+
+      <MultiFormNav actions={{ next }} isActive={true} isFinalStep formik={formik} />
+    </>
   )
 }
 

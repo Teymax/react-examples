@@ -6,41 +6,40 @@ import { FormikLoginProps } from './LoginForm'
 
 function LoginFormBase({ formik }: { formik: FormikProps<FormikLoginProps> }) {
   return (
-    <form className='form' onSubmit={formik.handleSubmit}>
-      <MultiFormHeader
-        title={'Login into your account'}
-        subtitle={<>Provide your auth info.</>}
-      />
-
-      <div className='form__body'>
-        <FormInput
-          label={'Email'}
-          name='email'
-          type='email'
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
-          errorCheck={formik}
+    <form className='form form-login' onSubmit={formik.handleSubmit}>
+      <div className='form__img'></div>
+      <div className='form__content'>
+        <MultiFormHeader
+          title={'Login into your account'}
+          subtitle={<>Provide your auth info.</>}
         />
 
-        <FormInput
-          label={'Password'}
-          name='password'
-          type='password'
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.password}
-          errorCheck={formik}
-        />
-      </div>
+        <div className='form__body'>
+          <FormInput
+            label={'Email'}
+            name='email'
+            placeholder='Your email'
+            type='email'
+            formik={formik}
+          />
 
-      <div className='form__btns'>
-        <button
-          className='btn btn--primary form__btn'
-          disabled={!formik.dirty || !formik.isValid}
-        >
-          Login
-        </button>
+          <FormInput
+            label={'Password'}
+            name='password'
+            placeholder='Password'
+            type='password'
+            formik={formik}
+          />
+        </div>
+
+        <div className='form__btns'>
+          <button
+            className='btn btn--primary form__btn'
+            disabled={!formik.dirty || !formik.isValid}
+          >
+            Login
+          </button>
+        </div>
       </div>
     </form>
   )

@@ -10,12 +10,14 @@
 
   .modal__container {
     background: #fff;
-    width: 602px;
-    height: 520px;
+    width: rem(602px);
+    height: rem(602px);
     position: relative;
     z-index: 100;
     box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     padding: rem(40px 60px);
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 }
