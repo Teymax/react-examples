@@ -2,14 +2,11 @@ import React from 'react'
 import { Carousel } from 'react-responsive-carousel'
 
 const PromoCard = () => (
-  <div
-    className='promo-card'
-    style={{ backgroundImage: 'url("/img/card-bg.jpg")' }}>
+  <div className='promo-card' style={{ backgroundImage: 'url("/img/card-bg.jpg")' }}>
     {/* <img className='promo-card__poster' src= alt='card' /> */}
     <div className='promo-card__content'>
       <h1 className='promo-card__title title title_big-display'>
-        <span className='promo-card__price'>$50 PRIZE</span> Bellator FIght
-        Night
+        <span className='promo-card__price'>$50 PRIZE</span> Bellator FIght Night
       </h1>
       <small className='promo-card__info'>
         12 Days : 13 HRS : 32 MINS : 21 Secs
@@ -36,7 +33,8 @@ const PromoCardsCarousel = () => {
           infiniteLoop
           onChange={(item: any) => setCurrentSlide(item)}
           showArrows={false}
-          showIndicators={false}>
+          showIndicators={false}
+        >
           <PromoCard />
           <PromoCard />
           <PromoCard />

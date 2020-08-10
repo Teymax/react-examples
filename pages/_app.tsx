@@ -1,9 +1,9 @@
 import '@styles/globals.scss'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { ModalProvider } from '@context/Modal'
 import { AppBar } from '@components/shared'
 import Head from 'next/head'
 import { wrapper } from '@store'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 function MyApp({ Component, pageProps }) {
   return (
