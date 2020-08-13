@@ -6,6 +6,7 @@ import { userService } from '@services'
 import {
   IUser,
   AUTH_SET_DATA,
+  AUTH_LOGOUT,
   AuthActionType,
   IAuthPayload,
 } from '@store/types/auth.types'
@@ -66,6 +67,11 @@ const actions = {
       } catch (error) {
         console.error(error)
       }
+    }
+  },
+  logout(): AuthActionType {
+    return {
+      type: AUTH_LOGOUT,
     }
   },
 }

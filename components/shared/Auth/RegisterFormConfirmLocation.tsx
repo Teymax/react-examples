@@ -25,7 +25,13 @@ const RegisterFormConfirmLocation = ({ next, step, formik }) => {
         </div>
       </div>
 
-      <MultiFormNav actions={{ next }} isActive={true} isFinalStep formik={formik} />
+      <MultiFormNav
+        isSkippable
+        actions={{ next }}
+        isActive={true}
+        isFinalStep
+        formik={formik}
+      />
     </>
   )
 }

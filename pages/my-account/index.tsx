@@ -15,8 +15,6 @@ function MyAccount() {
 
       <AccountPageLayout>
         <SectionAccountManagement />
-
-        <SectionGameHistory />
       </AccountPageLayout>
     </>
   )

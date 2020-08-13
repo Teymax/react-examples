@@ -31,17 +31,17 @@ function FormInput({
   label?: string
   formik: FormikProps<any>
 } & React.HTMLProps<HTMLInputElement>) {
-  const status = React.useMemo(() => validateField(inputProps.name, formik), [
-    formik,
-  ])
+  // const status = React.useMemo(() => validateField(inputProps.name, formik), [
+  //   formik,
+  // ])
+
+  const status = null
 
   return (
     <div className={classNames('field', status)}>
-      {inputProps.value && (
-        <label htmlFor='' className='field__label'>
-          {label}
-        </label>
-      )}
+      {/* {formik.values[inputProps.name] && (
+        <label className='field__label'>{label}</label>
+      )} */}
       <div className='field__wrap'>
         <input
           {...inputProps}
@@ -50,7 +50,7 @@ function FormInput({
           onBlur={formik.handleBlur}
           value={formik.values[inputProps.name]}
         />
-        {formik.errors && <FormInputValidationIcon status={status} />}
+        {/* {formik.errors && <FormInputValidationIcon status={status} />} */}
       </div>
     </div>
   )

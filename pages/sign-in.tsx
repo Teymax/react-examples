@@ -5,7 +5,7 @@ import { LoginForm } from '@components/SignIn'
 import { useModal } from '@hooks'
 
 function SignIn() {
-  const { showModal } = useModal(() => <LoginForm />)
+  const { showModal, hideModal } = useModal(() => <LoginForm onFinish={hideModal} />)
 
   return (
     <>

@@ -1,4 +1,15 @@
 .account {
+  .account__title {
+    font-weight: 500;
+    font-size: rem(28px);
+
+    color: $darkBlue;
+  }
+
+  .game-history {
+    margin-top: rem(46px);
+  }
+
   .account__point-cards {
     display: flex;
     justify-content: space-between;
@@ -7,13 +18,15 @@
     .point-card {
       display: flex;
       flex-direction: column;
+      flex-grow: 1;
 
-      background: #f4f4f4;
-      border-radius: 24px;
-      padding: rem(24px 20px 12px);
+      background: #fff;
+      border-radius: 12px;
+      padding: rem(29px 40px 30px);
       height: 120px;
       font-weight: 500;
       text-align: center;
+      box-shadow: 0px 16px 60px rgba(78, 79, 114, 0.08);
 
       .point-card__number {
         margin-bottom: rem(8px);
@@ -27,11 +40,16 @@
     }
 
     .point-card + .point-card {
-      margin-left: rem(12px);
+      margin-left: rem(26px);
     }
   }
 
   .account__info {
+    background: #fff;
+    padding: rem(25px 32px 46px);
+    border-radius: 12px;
+    box-shadow: 0px 16px 60px rgba(78, 79, 114, 0.08);
+
     .account__form {
       &.active {
         .item {

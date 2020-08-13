@@ -63,6 +63,7 @@ const RegisterFormAdditionalSecurity = ({
         </div>
 
         <MultiFormNav
+          isSkippable
           actions={{ next }}
           isActive={
             !formik.errors.phoneNumber &&

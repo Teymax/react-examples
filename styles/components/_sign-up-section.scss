@@ -1,0 +1,24 @@
+.sign-up-section {
+  .sign-up-section__info {
+    font-size: rem(16px);
+
+    color: #8b98ab;
+  }
+
+  .section__header {
+    margin-bottom: rem(28px);
+  }
+
+  .sign-up-form {
+    width: 100%;
+    padding: rem(45px 144px 35px);
+
+    @media screen and (max-width: 836px) {
+      padding: rem(23px);
+    }
+  }
+
+  .field {
+    width: 100%;
+  }
+}

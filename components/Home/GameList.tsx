@@ -42,13 +42,13 @@ const GameListItems = () => {
   }, [])
 
   return (
-    <div className='game-list__games'>
+    <section className='game-list__games section--highlight'>
       {!games.length ? (
         <div>No games</div>
       ) : (
         games.map((game) => <GameListItem key={game.id} game={game} />)
       )}
-    </div>
+    </section>
   )
 }
 

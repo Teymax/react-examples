@@ -1,23 +1,38 @@
 import React from 'react'
-import { Modal } from '@components/shared'
 import Head from 'next/head'
-import { RegistrationMultiForm } from '@components/SignUp'
-import { useModal } from '@hooks'
+import { FormInput } from '@components/UI'
+import SignUpFormBase from '@components/SignUp/SignUpFormBase'
+import { useFormik } from 'formik'
+import { SignUpForm } from '@components/SignUp'
+
+const SignUpSection = () => (
+  <section className='section sign-up-section'>
+    <div className='container--section'>
+      <div className='section__header'>
+        <h1 className='section__head'>Create a new account</h1>
+        <div className='sign-up-section__info'>
+          Sign up with Action 247 for the latest information about legal sports
+          betting in Tennessee, and we'll let you know when we have free sports games
+          with great cash prizes.
+        </div>
+      </div>
+
+      <div className='section section--highlight'>
+        <SignUpForm />
+      </div>
+    </div>
+  </section>
+)
 
 function SignUp() {
-  const { showModal } = useModal(() => <RegistrationMultiForm />)
-
   return (
     <>
       <Head>
         <link rel='icon' href='/favicon.ico' />
+        <title>ChalkLine | Sign Up</title>
       </Head>
 
-      <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'center' }}>
-        <button className='btn btn--primary btn--tiny' onClick={showModal}>
-          Show
-        </button>
-      </div>
+      <SignUpSection />
     </>
   )
 }

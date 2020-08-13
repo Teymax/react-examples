@@ -9,12 +9,14 @@ const MultiFormNav = ({
   isFinalStep = false,
   formik,
   toSendSubmit = false,
+  isSkippable = false,
 }: {
   isActive: boolean
   isFinalStep?: any
   formik?: FormikProps<any>
   actions: any
   toSendSubmit?: boolean
+  isSkippable?: boolean
 }) => (
   <div className='form__btns'>
     <button
@@ -41,9 +43,11 @@ const MultiFormNav = ({
       </span>
     </button>
 
-    <button className='btn form__btn--skip' onClick={next}>
-      Skip
-    </button>
+    {isSkippable && (
+      <button className='btn form__btn--skip' onClick={next}>
+        Skip
+      </button>
+    )}
   </div>
 )
 

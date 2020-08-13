@@ -46,6 +46,7 @@ const RegisterFormSecurity = ({
         </div>
 
         <MultiFormNav
+          isSkippable
           actions={{ next }}
           isActive={
             !formik.errors.firstName &&

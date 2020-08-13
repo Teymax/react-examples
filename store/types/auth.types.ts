@@ -1,9 +1,11 @@
 import { IAction } from '@interfaces'
 
 export const AUTH_SET_DATA = 'AUTH_SET_DATA'
+export const AUTH_LOGOUT = 'AUTH_LOGOUT'
 
 export interface IUser {
   username: string
+  email: string
   password: string
 }
 
@@ -17,4 +19,8 @@ interface IAuthAction extends IAction {
   payload: IAuthPayload
 }
 
-export type AuthActionType = IAuthAction
+interface IAuthLogoutAction extends IAction {
+  type: typeof AUTH_LOGOUT
+}
+
+export type AuthActionType = IAuthAction | IAuthLogoutAction

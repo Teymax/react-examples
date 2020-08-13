@@ -40,17 +40,17 @@ const PopularPicksTable = () => (
 function PopularPicksSection() {
   return (
     <div className='section popular-picks'>
-      <div className='container'>
-        <div className='popular-picks__header'>
+      <div className='popular-picks__header'>
+        <div className='container--section'>
           <h1 className='section__head popular-picks__title title'>Popular Picks</h1>
-          <div className='section__head popular-picks__info'>
+          <div className='popular-picks__info'>
             Get the consensus across all action 247 players on what they think the
             winners will be!
           </div>
         </div>
+      </div>
 
-        <Divider />
-
+      <div className='popular-picks__content'>
         <div className='popular-picks__body'>
           <PopularPicksTable />
         </div>
@@ -71,7 +71,7 @@ function PopularPicksPage() {
   return (
     <>
       <Head>
-        <title>Chalkline | Popular Picks</title>
+        <title>ChalkLine | Popular Picks</title>
       </Head>
 
       <PageContentWrapper>

@@ -10,7 +10,7 @@ export interface FormikLoginProps {
   password: string
 }
 
-function LoginForm() {
+function LoginForm({ onFinish }: any) {
   const dispatch = useDispatch()
 
   const formik = useFormik<FormikLoginProps>({
@@ -30,7 +30,7 @@ function LoginForm() {
         password: value.password,
       }
 
-      dispatch(authActions.loginRequest(loginData))
+      ;(dispatch(authActions.loginRequest(loginData)) as any).then(onFinish)
     },
   })
 

@@ -8,34 +8,18 @@ import Icon from '@material-ui/core/Icon'
 import classNames from 'classnames'
 import { useToggler } from '@hooks'
 import { useRouter } from 'next/router'
+import { useSelector, useDispatch } from 'react-redux'
+import { RootState } from '@store/reducers'
+import { Button } from '@components/UI'
+import { authActions } from '@store/actions'
 
 const navLinks = [
   {
     name: 'My picks',
     to: '/my-account/picks',
+    forLoggedUser: true,
     icon: <PicksSvg />,
   },
-  {
-    name: 'Splash',
-    to: '/splash',
-    icon: <PicksSvg />,
-  },
-  {
-    name: 'My Account',
-    to: '/my-account',
-    icon: <AccountSvg />,
-  },
-  {
-    name: 'Leaderboard',
-    to: '/leaderboard',
-    icon: <AccountSvg />,
-  },
-  {
-    name: 'Popular Picks',
-    to: '/popular-picks',
-    icon: <AccountSvg />,
-  },
-  // {
   //   name: 'Sign out',
   //   to: '/',
   //   icon: <SignOutSvg />,
@@ -43,11 +27,13 @@ const navLinks = [
   {
     name: 'Sign in',
     to: '/sign-in',
+
     icon: <SignOutSvg />,
   },
   {
     name: 'Sign up',
     to: '/sign-up',
+
     icon: <SignOutSvg />,
   },
 ]
@@ -56,6 +42,32 @@ function AppBar() {
   const matches = useMediaQuery('(min-width:835px)')
   const { toggle, isVisible } = useToggler()
   const router = useRouter()
+  const { isLoggedIn, user } = useSelector((state: RootState) => ({
+    user: state.auth.user,
+    isLoggedIn: state.auth.isLoggedIn,
+  }))
+  const dispatch = useDispatch()
+
+  const renderLinks = () =>
+    navLinks.reduce((acc, link) => {
+      if (isLoggedIn && !link.forLoggedUser) {
+        return acc
+      }
+
+      return [
+        ...acc,
+        <Link key={link.to} href={link.to}>
+          <a
+            className={classNames('app-bar__link', {
+              active: router.pathname === link.to,
+            })}
+          >
+            <div className='app-bar__link-icon'>{link.icon}</div>
+            {link.name}
+          </a>
+        </Link>,
+      ]
+    }, [])
 
   return (
     <div className={classNames('app-bar')}>
@@ -69,24 +81,36 @@ function AppBar() {
         </div>
         <div className='app-bar__links'>
           {matches ? (
-            navLinks.map((link) => (
-              <Link key={link.to} href={link.to}>
-                <a
-                  className={classNames('app-bar__link', {
-                    active: router.pathname === link.to,
-                  })}
-                >
-                  <div className='app-bar__link-icon'>{link.icon}</div>
-                  {link.name}
-                </a>
-              </Link>
-            ))
+            <>
+              {renderLinks()}
+              {isLoggedIn && (
+                <>
+                  <Link href='/my-account'>
+                    <a className={classNames('app-bar__link app-bar__profile')}>
+                      <div className='app-bar__profile-icon app-bar__link-icon'>
+                        <Icon>account_circle</Icon>
+                      </div>
+                      My Account
+                    </a>
+                  </Link>
+                  <Button
+                    className={classNames('app-bar__link')}
+                    onClick={() => dispatch(authActions.logout())}
+                  >
+                    <div className='app-bar__link-icon'>
+                      <SignOutSvg />
+                    </div>
+                    Sign out
+                  </Button>
+                </>
+              )}
+            </>
           ) : (
             <>
               <div className='app-bar__signup app-bar__action'>
                 <Link href='/sign-up'>
                   <a>
-                    <div className='app-bar__signup-icon'>
+                    <div className='app-bar__signup-icon' title={user?.email || ''}>
                       <Icon fontSize='large' style={{ color: '#0D2950' }}>
                         account_circle
                       </Icon>

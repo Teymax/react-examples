@@ -2,6 +2,18 @@
   width: 100%;
   background-color: #fff;
 
+  .app-bar__profile {
+    display: flex;
+    align-items: center;
+  }
+
+  .app-bar__profile-icon {
+    margin-right: rem(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .app-bar__wrapper {
     display: flex;
     position: relative;

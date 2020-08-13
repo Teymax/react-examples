@@ -1,0 +1,39 @@
+.follow-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #8b98ab;
+
+  .follow-us__title {
+    font-weight: 500;
+    font-size: $fontSizeBody1;
+    line-height: rem(28px);
+
+    text-align: center;
+  }
+
+  .follow-us__header {
+    margin-bottom: rem(50px);
+  }
+
+  .follow-us__address {
+    margin-bottom: rem(15px);
+
+    .link {
+      color: #000;
+    }
+  }
+
+  .follow-us__list {
+    display: flex;
+
+    .follow-us__item {
+      color: #8b98ab;
+
+      &:not(:last-child) {
+        margin-right: rem(10px);
+      }
+    }
+  }
+}
