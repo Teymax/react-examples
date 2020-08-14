@@ -48,7 +48,7 @@ function AppBar() {
   }))
   const dispatch = useDispatch()
 
-  const renderLinks = () =>
+  const renderLinks = (className, iconClassName) =>
     navLinks.reduce((acc, link) => {
       if (isLoggedIn && !link.forLoggedUser) {
         return acc
@@ -58,16 +58,38 @@ function AppBar() {
         ...acc,
         <Link key={link.to} href={link.to}>
           <a
-            className={classNames('app-bar__link', {
+            className={classNames(className, {
               active: router.pathname === link.to,
             })}
           >
-            <div className='app-bar__link-icon'>{link.icon}</div>
+            <div className={iconClassName}>{link.icon}</div>
             {link.name}
           </a>
         </Link>,
       ]
     }, [])
+
+  const LoggedAccount = () => (
+    <>
+      <Link href='/my-account'>
+        <a className={classNames('app-bar__link app-bar__profile')}>
+          <div className='app-bar__profile-icon app-bar__link-icon'>
+            <Icon>account_circle</Icon>
+          </div>
+          My Account
+        </a>
+      </Link>
+      <Button
+        className={classNames('app-bar__link')}
+        onClick={() => dispatch(authActions.logout())}
+      >
+        <div className='app-bar__link-icon'>
+          <SignOutSvg />
+        </div>
+        Sign out
+      </Button>
+    </>
+  )
 
   return (
     <div className={classNames('app-bar')}>
@@ -82,44 +104,31 @@ function AppBar() {
         <div className='app-bar__links'>
           {matches ? (
             <>
-              {renderLinks()}
-              {isLoggedIn && (
-                <>
-                  <Link href='/my-account'>
-                    <a className={classNames('app-bar__link app-bar__profile')}>
-                      <div className='app-bar__profile-icon app-bar__link-icon'>
-                        <Icon>account_circle</Icon>
-                      </div>
-                      My Account
-                    </a>
-                  </Link>
-                  <Button
-                    className={classNames('app-bar__link')}
-                    onClick={() => dispatch(authActions.logout())}
-                  >
-                    <div className='app-bar__link-icon'>
-                      <SignOutSvg />
-                    </div>
-                    Sign out
-                  </Button>
-                </>
-              )}
+              {renderLinks('app-bar__link', 'app-bar__link-icon')}
+              {isLoggedIn && <LoggedAccount />}
             </>
           ) : (
             <>
-              <div className='app-bar__signup app-bar__action'>
-                <Link href='/sign-up'>
-                  <a>
-                    <div className='app-bar__signup-icon' title={user?.email || ''}>
-                      <Icon fontSize='large' style={{ color: '#0D2950' }}>
-                        account_circle
-                      </Icon>
-                    </div>
+              {isLoggedIn ? (
+                <LoggedAccount />
+              ) : (
+                <div className='app-bar__signup app-bar__action'>
+                  <Link href='/sign-up'>
+                    <a>
+                      <div
+                        className='app-bar__signup-icon'
+                        title={user?.email || ''}
+                      >
+                        <Icon fontSize='large' style={{ color: '#0D2950' }}>
+                          account_circle
+                        </Icon>
+                      </div>
 
-                    <div className='app-bar__signup-text'>Signup</div>
-                  </a>
-                </Link>
-              </div>
+                      <div className='app-bar__signup-text'>Signup</div>
+                    </a>
+                  </Link>
+                </div>
+              )}
 
               <div className='app-bar__action'>
                 <button className='btn' onClick={toggle}>
@@ -136,14 +145,15 @@ function AppBar() {
       {isVisible && !matches && (
         <div className='dropdown app-bar__dropdown'>
           <div className='dropdown__list'>
-            {navLinks.map((link) => (
+            {renderLinks('dropdown__item', 'dropdown__item-icon')}
+            {/* {navLinks.map((link) => (
               <Link key={link.to} href={link.to}>
                 <a className='dropdown__item'>
                   <div className='dropdown__item-icon'>{link.icon}</div>
                   {link.name}
                 </a>
               </Link>
-            ))}
+            ))} */}
           </div>
         </div>
       )}

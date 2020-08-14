@@ -26,23 +26,23 @@ const FormInputValidationIcon = ({
 function FormInput({
   label = '',
   formik,
+  icon = null,
   ...inputProps
 }: {
   label?: string
   formik: FormikProps<any>
+  icon?: JSX.Element
 } & React.HTMLProps<HTMLInputElement>) {
-  // const status = React.useMemo(() => validateField(inputProps.name, formik), [
-  //   formik,
-  // ])
-
-  const status = null
+  const status = React.useMemo(() => validateField(inputProps.name, formik), [
+    formik,
+  ])
 
   return (
     <div className={classNames('field', status)}>
-      {/* {formik.values[inputProps.name] && (
-        <label className='field__label'>{label}</label>
-      )} */}
       <div className='field__wrap'>
+        {formik.values[inputProps.name] && (
+          <label className='field__label'>{label}</label>
+        )}
         <input
           {...inputProps}
           className='field__input'
@@ -50,7 +50,11 @@ function FormInput({
           onBlur={formik.handleBlur}
           value={formik.values[inputProps.name]}
         />
-        {/* {formik.errors && <FormInputValidationIcon status={status} />} */}
+        {validateField(inputProps.name, formik) ? (
+          <FormInputValidationIcon status={status} />
+        ) : (
+          icon
+        )}
       </div>
     </div>
   )

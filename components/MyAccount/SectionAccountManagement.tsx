@@ -4,7 +4,7 @@ import { AccountInfoItems } from './InfoItem'
 import classNames from 'classnames'
 import { Button } from '@components/UI'
 import SectionGameHistory from './SectionGameHistory'
-import { Formik, useFormik, FormikProps } from 'formik'
+import { useFormik, FormikProps } from 'formik'
 import { useSelector } from 'react-redux'
 import { RootState } from '@store/reducers'
 
@@ -56,8 +56,6 @@ const MyInfoFormBase = ({ formik }: { formik: FormikProps<IMyInfoFormProps> }) =
 
 const MyInfoForm = () => {
   const { user } = useSelector((state: RootState) => ({ user: state.auth.user }))
-
-  console.log(user)
 
   const formik = useFormik<IMyInfoFormProps>({
     initialValues: {

@@ -2,6 +2,10 @@ import React from 'react'
 import { FormInput } from '@components/UI'
 import { FormikProps } from 'formik'
 import { IRegisterProps } from './SignUpForm'
+import EmailSvg from '../../public/img/mail.svg'
+import LockSvg from '../../public/img/lock.svg'
+import ProfileSvg from '../../public/img/profile.svg'
+import CalendarSvg from '../../public/img/calendar.svg'
 
 const SignUpFormBase = ({ formik }: { formik: FormikProps<IRegisterProps> }) => (
   <form className='sign-up-form form' onSubmit={formik.handleSubmit}>
@@ -12,6 +16,7 @@ const SignUpFormBase = ({ formik }: { formik: FormikProps<IRegisterProps> }) => 
         name='email'
         placeholder='E-mail'
         type='email'
+        icon={<EmailSvg />}
       />
       <FormInput
         label={'Password'}
@@ -19,12 +24,14 @@ const SignUpFormBase = ({ formik }: { formik: FormikProps<IRegisterProps> }) => 
         formik={formik}
         placeholder='Password'
         type='password'
+        icon={<LockSvg />}
       />
       <FormInput
         label={'Username'}
         name='username'
         formik={formik}
         placeholder='Username'
+        icon={<ProfileSvg />}
         type='username'
       />
       <div className='form__notation'>
@@ -56,6 +63,7 @@ const SignUpFormBase = ({ formik }: { formik: FormikProps<IRegisterProps> }) => 
         label={'Date of birth'}
         name='birthDate'
         placeholder='Date of birth'
+        icon={<CalendarSvg />}
       />
       <div className='form__notation'>
         You must be at least 21 years of age to register

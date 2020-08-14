@@ -13,9 +13,10 @@ const actions = {
     }
   },
   fetchBetsRequest(): ThunkAction<void, RootState, unknown, Action<void>> {
-    return async (dispatch: AppDispatch) => {
+    return async (dispatch: AppDispatch, getState: () => RootState) => {
       try {
-        const res = await betService.fetch()
+        const { unique_name } = getState().auth.user
+        const res = await betService.fetch({ playerId: unique_name })
 
         const bets = res.data
 

@@ -11,6 +11,7 @@ import {
   IAuthPayload,
 } from '@store/types/auth.types'
 import jwtDecode from 'jwt-decode'
+import { IRegisterData } from '@services/user.service'
 
 const actions = {
   setAuthData({ token, user }: IAuthPayload): AuthActionType {
@@ -46,14 +47,14 @@ const actions = {
       }
     }
   },
-  registerRequest({
-    password,
-    username,
-  }): ThunkAction<void, RootState, IUser, Action<void>> {
+  registerRequest(
+    options: IRegisterData
+  ): ThunkAction<void, RootState, IUser, Action<void>> {
     return async (dispatch: AppDispatch) => {
       try {
-        const res = await userService.register({ password, username })
+        const res = await userService.register(options)
 
+        console.log(res)
         const user = res.data
 
         dispatch(

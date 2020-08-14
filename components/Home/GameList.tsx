@@ -44,7 +44,7 @@ const GameListItems = () => {
   return (
     <section className='game-list__games section--highlight'>
       {!games.length ? (
-        <div>No games</div>
+        <div>Loading...</div>
       ) : (
         games.map((game) => <GameListItem key={game.id} game={game} />)
       )}
@@ -61,6 +61,7 @@ function GameList() {
           <ArrowDownSvg />
         </div>
       </div>
+
       <GameListItems />
     </div>
   )

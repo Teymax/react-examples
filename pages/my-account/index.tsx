@@ -1,10 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import {
-  SectionGameHistory,
-  SectionAccountManagement,
-  AccountPageLayout,
-} from '@components/MyAccount'
+import { SectionAccountManagement, AccountPageLayout } from '@components/MyAccount'
 
 function MyAccount() {
   return (

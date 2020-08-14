@@ -1,5 +1,6 @@
 import React from 'react'
 import { TableData } from '@components/UI'
+import { leaderboardService } from '@services'
 
 const tableInfo = {
   body: [
@@ -31,6 +32,18 @@ const tableInfo = {
 }
 
 function LeaderboardSection() {
+  const [leaderboardData, setLeaderboardData] = React.useState([])
+
+  React.useEffect(() => {
+    ;(async () => {
+      const res = await leaderboardService.fetchLeaderboard({
+        seriesNames: 'NHL',
+      })
+
+      console.log(res)
+    })()
+  }, [])
+
   return (
     <div className='section leaderboard'>
       <div className='container'>

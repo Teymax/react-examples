@@ -26,6 +26,8 @@
     .item__value {
       padding: rem(10px 0);
       color: #8b98ab;
+      width: -webkit-fill-available;
+      max-width: 600px;
     }
   }
 

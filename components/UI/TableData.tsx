@@ -14,7 +14,9 @@ function TableData({
   className?: string
   children?: any
 }) {
-  return (
+  return !tableInfo.body.length ? (
+    <div>No data</div>
+  ) : (
     <table className={'table ' + className}>
       {tableInfo.headers && (
         <thead>

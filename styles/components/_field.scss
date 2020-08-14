@@ -1,4 +1,5 @@
 .field {
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 1px solid transparent;
@@ -18,6 +19,7 @@
   }
 
   .field__wrap {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,6 +31,9 @@
     line-height: 1;
     font-size: rem(9px);
     color: #8b98ab;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .field__input {

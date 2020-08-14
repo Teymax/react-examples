@@ -7,6 +7,7 @@ export interface IUser {
   username: string
   email: string
   password: string
+  unique_name: string
 }
 
 export interface IAuthPayload {
