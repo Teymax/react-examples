@@ -36,8 +36,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <div className='page'>
         <ModalProvider>
-          <AppBar />
-
           {/* <PersistGate persistor={persistor} loading={<div>Loading...</div>}> */}
           <Component {...pageProps} />
           {/* </PersistGate > */}

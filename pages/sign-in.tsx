@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal } from '@components/shared'
+import { Modal, DefaultThemeLayout } from '@components/shared'
 import Head from 'next/head'
 import { LoginForm } from '@components/SignIn'
 import { useModal } from '@hooks'
@@ -13,11 +13,15 @@ function SignIn() {
         <title>ChalkLine | Sign In</title>
       </Head>
 
-      <div style={{ padding: '20px 0', display: 'flex', justifyContent: 'center' }}>
-        <button className='btn btn--primary btn--tiny' onClick={showModal}>
-          Show
-        </button>
-      </div>
+      <DefaultThemeLayout>
+        <div
+          style={{ padding: '20px 0', display: 'flex', justifyContent: 'center' }}
+        >
+          <button className='btn btn--primary btn--tiny' onClick={showModal}>
+            Show
+          </button>
+        </div>
+      </DefaultThemeLayout>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { GamePageLayout, GameHeader } from '@components/Game'
-import { Divider } from '@components/shared'
+import { Divider, DefaultThemeLayout } from '@components/shared'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { IGame } from '@store/types/game.types'
@@ -28,13 +28,15 @@ function GamePage() {
         <title>ChalkLine | Game №{router.query.id}</title>
       </Head>
 
-      <GamePageLayout>
-        <GameHeader game={activeGame} />
+      <DefaultThemeLayout>
+        <GamePageLayout>
+          <GameHeader game={activeGame} />
 
-        <Divider />
+          <Divider />
 
-        <GameGround />
-      </GamePageLayout>
+          <GameGround />
+        </GamePageLayout>
+      </DefaultThemeLayout>
     </>
   )
 }

@@ -4,6 +4,7 @@ import { FormInput } from '@components/UI'
 import SignUpFormBase from '@components/SignUp/SignUpFormBase'
 import { useFormik } from 'formik'
 import { SignUpForm } from '@components/SignUp'
+import { DefaultThemeLayout } from '@components/shared'
 
 const SignUpSection = () => (
   <section className='section sign-up-section'>
@@ -32,7 +33,9 @@ function SignUp() {
         <title>ChalkLine | Sign Up</title>
       </Head>
 
-      <SignUpSection />
+      <DefaultThemeLayout>
+        <SignUpSection />
+      </DefaultThemeLayout>
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { PageContentWrapper, Divider } from '@components/shared'
+import { PageContentWrapper, Divider, DefaultThemeLayout } from '@components/shared'
 import { Button } from '@components/UI'
 
 const PicksTableCard = () => (
@@ -74,9 +74,11 @@ function PopularPicksPage() {
         <title>ChalkLine | Popular Picks</title>
       </Head>
 
-      <PageContentWrapper>
-        <PopularPicksSection />
-      </PageContentWrapper>
+      <DefaultThemeLayout>
+        <PageContentWrapper>
+          <PopularPicksSection />
+        </PageContentWrapper>
+      </DefaultThemeLayout>
     </>
   )
 }

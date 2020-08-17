@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { PageContentWrapper } from '@components/shared'
+import { PageContentWrapper, DefaultThemeLayout } from '@components/shared'
 import {
   FollowSection,
   EmailTemplateSection,
@@ -34,15 +34,17 @@ function EmailResultsPage() {
         <title>ChalkLine | Email Results</title>
       </Head>
 
-      <PageContentWrapper>
-        <EmailTemplateSection>
-          <EmailTemplateHeader />
+      <DefaultThemeLayout>
+        <PageContentWrapper>
+          <EmailTemplateSection>
+            <EmailTemplateHeader />
 
-          <EmailTemplateResultsBody />
-        </EmailTemplateSection>
+            <EmailTemplateResultsBody />
+          </EmailTemplateSection>
 
-        <FollowSection />
-      </PageContentWrapper>
+          <FollowSection />
+        </PageContentWrapper>
+      </DefaultThemeLayout>
     </>
   )
 }

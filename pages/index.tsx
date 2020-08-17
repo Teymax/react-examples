@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { PromoCardsCarousel, GameList } from '@components/Home'
-import { PageContentWrapper } from '@components/shared'
+import { PageContentWrapper, DefaultThemeLayout } from '@components/shared'
 
 export default function Home() {
   return (
@@ -10,11 +10,13 @@ export default function Home() {
         <title>ChalkLine</title>
       </Head>
 
-      <PageContentWrapper>
-        <PromoCardsCarousel />
+      <DefaultThemeLayout>
+        <PageContentWrapper>
+          <PromoCardsCarousel />
 
-        <GameList />
-      </PageContentWrapper>
+          <GameList />
+        </PageContentWrapper>
+      </DefaultThemeLayout>
     </>
   )
 }

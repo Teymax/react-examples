@@ -1,0 +1,747 @@
+/* ------------ */
+/* --- MAIN --- */
+/* ------------ */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.2;
+  background-color: black;
+  font-size: 14px;
+  color: #363535;
+}
+
+header {
+  background-color: #000000;
+  border-color: #ffcc1a;
+}
+
+.body-content {
+  background-color: #242424;
+}
+
+.main-container {
+  padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.footer {
+  background-color: black;
+  min-height: 100px;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+/* ----------------- */
+/* --- ALIGNMENT --- */
+/* ----------------- */
+
+.right {
+  text-align: right;
+}
+
+.v-middle {
+  /* vertical align text*/
+  display: flex;
+  align-items: center;
+}
+
+/* ------------- */
+/* --- LINKS --- */
+/* ------------- */
+
+a {
+  color: #ffcc1a;
+}
+a:hover {
+  color: #fcf0c5 !important;
+}
+
+/* ---------------- */
+/* --- HEADINGS --- */
+/* ---------------- */
+
+h1 {
+  text-transform: uppercase;
+}
+
+/* --------------- */
+/* --- COLOURS --- */
+/* --------------- */
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
+}
+
+.background-white {
+  background-color: white;
+}
+
+h6 {
+  font-weight: 500;
+  /*font-size: 16px;
+  line-height: 24px;*/
+}
+
+/* -------------- */
+/* --- NAVBAR --- */
+/* -------------- */
+
+/* Menu Links */
+a.text-dark.nav-link {
+  color: #ffcc1a !important;
+  text-transform: uppercase;
+}
+a.text-dark.nav-link:hover {
+  color: #fcf0c5 !important;
+}
+
+.dropdown-item {
+  padding: 0px 10px 0px 10px !important;
+  font-size: 13px;
+}
+
+.dropdown-nav-item {
+  color: #5a5a5a !important;
+  text-transform: uppercase;
+}
+
+.dropdown-nav-item:hover {
+  color: #212529 !important;
+  text-decoration: none;
+}
+
+.dropdown-toggle::after {
+  margin-left: 0.5em !important;
+}
+
+/* Logo */
+.navbar-brand {
+  width: 230px;
+  height: 50px;
+  margin: 10px 0;
+  display: block;
+  background-image: url(https://chalkline-v4-bettabets.s3.amazonaws.com/BBtest.webp) !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center !important;
+}
+
+/* Border */
+nav.border-bottom {
+  border-bottom: 1px solid #ffcc1a !important;
+}
+
+/* Hanburger color (change strok='...') */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 204, 26)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+/* --------------- */
+/* --- BUTTONS --- */
+/* --------------- */
+
+.btn {
+  border-style: none;
+  text-transform: uppercase;
+  border-radius: 15px;
+  font-size: 13px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  cursor: pointer;
+  /*color: #212529;*/
+  color: #363535;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #ffcc1a;
+}
+
+.btn-primary:hover {
+  background-color: #fcf0c5;
+  color: white !important;
+}
+
+.btn-primary:disabled {
+  color: #fff;
+  background-color: grey;
+  border-color: grey;
+  opacity: 0.5;
+}
+
+.btn-cta {
+  color: white;
+  background-color: #90bd0a;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.btn-cta:hover {
+  background-color: #90bd0a;
+  color: white !important;
+  opacity: 0.5;
+}
+
+.btn-cta:disabled {
+  color: #fff;
+  background-color: grey;
+  border-color: grey;
+  opacity: 0.5;
+}
+
+.btn-secondary {
+  background-color: #7e878e;
+  color: #fff;
+}
+
+/* ---------------- */
+/* --- CAROUSEL --- */
+/* ---------------- */
+
+.carousel-item > img {
+  width: 100%;
+}
+
+/* ------------- */
+/* --- FORMS --- */
+/* ------------- */
+
+label {
+  color: white;
+  font-size: 12px;
+}
+
+.free-text {
+  font-size: 14px;
+  color: white;
+}
+
+/* ----------------------- */
+/* --- LOADING SPINNER --- */
+/* ----------------------- */
+
+.spinner {
+  height: 50px;
+  width: 50px;
+}
+
+.spinner-container {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ---------------------- */
+/* --- SECTION HEADER --- */
+/* ---------------------- */
+
+.section-header {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffcc1a;
+  background-color: black;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-image: url(https://chalkline-v4-bettabets.s3.amazonaws.com/icon_BB_FTP_APPL-L.webp) !important;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 10px center;
+  border-bottom: 2px solid #ffcc1a !important;
+  display: flex;
+  align-items: center;
+}
+
+.section-header-2 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+  background-color: black;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ffcc1a !important;
+  text-align: center;
+}
+
+/* ------------------ */
+/* --- LOBBY PAGE --- */
+/* ------------------ */
+
+.lobby-game-name {
+  font-weight: 500;
+  font-size: 15px;
+  color: #3e3d3d;
+  display: flex;
+  /*opacity: 0.9;*/
+}
+
+.lobby-game-sport-icon {
+  min-width: 35px !important;
+  min-height: 35px !important;
+  /*background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 1500 1500' style='enable-background:new 0 0 1500 1500;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:black;} %3C/style%3E%3Cpath class='st0' d='M749.98,0.23C336.41,0.23-0.05,336.69-0.05,750.25s336.46,750.02,750.02,750.02S1500,1163.81,1500,750.25 S1163.54,0.23,749.98,0.23z M1427.18,750.25c0,136.94-40.9,264.49-111.06,371.16c-70.16-106.66-111.03-234.22-111.03-371.16 s40.87-264.5,111.03-371.16C1386.28,485.76,1427.18,613.31,1427.18,750.25z M189.25,370.92 c73.51,108.29,116.54,238.87,116.54,379.33c0,140.46-43.03,271.04-116.54,379.33C115.76,1021.29,72.77,890.7,72.77,750.25 C72.77,609.8,115.76,479.21,189.25,370.92z M749.98,1427.46c-205.62,0-390.1-92.14-514.4-237.26 c89.89-123.67,143.03-275.7,143.03-439.94s-53.13-316.27-143.03-439.94c124.3-145.13,308.78-237.26,514.4-237.26 c208.88,0,395.95,95.08,520.27,244.21c-86.85,122.4-137.98,271.83-137.98,433s51.13,310.6,137.98,433 C1145.93,1332.38,958.85,1427.46,749.98,1427.46z'/%3E%3C/svg%3E");*/
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  background-position: 5px 5px;
+  padding: 10px;
+  border-radius: 30px;
+  display: inline-block;
+  opacity: 0.9;
+}
+
+/* fallback */
+.sport_icon {
+  /*background-image: url(https://chalkline-v4-bettabets.s3.amazonaws.com/sport-icons/icons8-soccer-ball-50.png) !important;*/
+}
+
+.sport_icon.soccer {
+  background-image: url(https://chalkline-v4-bettabets.s3.amazonaws.com/sport-icons/soccer.png) !important;
+}
+
+.sport_icon.lottery {
+  background-image: url(https://chalkline-v4-bettabets.s3.amazonaws.com/sport-icons/lottery.png) !important;
+}
+
+.lobby-game-prize {
+  background-color: #545c68;
+  color: white;
+  padding: 5px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.lobby-game-date {
+  text-transform: uppercase;
+  font-size: 10px;
+  opacity: 0.6;
+  margin-top: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+  display: block;
+}
+
+.lobby-game-left-column {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.lobby-game-middle-column {
+  flex-grow: 1; /* Set the middle element to grow and stretch, requires a flex container */
+}
+
+.lobby-game-right-column {
+  width: 70px;
+  margin-left: 10px;
+}
+
+/* ----------------------- */
+/* --- LOBBY COUNTDOWN --- */
+/* ----------------------- */
+.lobby-game-countdown-green {
+  color: green;
+}
+
+.lobby-game-countdown-orange {
+  color: orange;
+}
+
+.lobby-game-countdown-red {
+  color: red;
+}
+
+.lobby-game-countdown-container {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ----------------- */
+/* --- GAME PAGE --- */
+/* ----------------- */
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: yellow;
+  padding: 50px;
+  font-size: 20px;
+}
+
+.game-sport-icon {
+  min-width: 35px !important;
+  min-height: 35px !important;
+  background-color: black;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 1500 1500' style='enable-background:new 0 0 1500 1500;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0{fill:white;} %3C/style%3E%3Cpath class='st0' d='M749.98,0.23C336.41,0.23-0.05,336.69-0.05,750.25s336.46,750.02,750.02,750.02S1500,1163.81,1500,750.25 S1163.54,0.23,749.98,0.23z M1427.18,750.25c0,136.94-40.9,264.49-111.06,371.16c-70.16-106.66-111.03-234.22-111.03-371.16 s40.87-264.5,111.03-371.16C1386.28,485.76,1427.18,613.31,1427.18,750.25z M189.25,370.92 c73.51,108.29,116.54,238.87,116.54,379.33c0,140.46-43.03,271.04-116.54,379.33C115.76,1021.29,72.77,890.7,72.77,750.25 C72.77,609.8,115.76,479.21,189.25,370.92z M749.98,1427.46c-205.62,0-390.1-92.14-514.4-237.26 c89.89-123.67,143.03-275.7,143.03-439.94s-53.13-316.27-143.03-439.94c124.3-145.13,308.78-237.26,514.4-237.26 c208.88,0,395.95,95.08,520.27,244.21c-86.85,122.4-137.98,271.83-137.98,433s51.13,310.6,137.98,433 C1145.93,1332.38,958.85,1427.46,749.98,1427.46z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  background-position: 5px 5px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.btn-auto-select {
+  border-color: #6c757d;
+  border-style: solid;
+}
+
+.game-timer {
+  padding: 10px 0;
+  font-size: 13px;
+}
+
+.game-timer-unit {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: 0;
+  -moz-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  color: #999;
+  font-size: 13px;
+}
+.game-timer-unit span {
+  display: block;
+  font-size: 30px;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+  color: black;
+}
+
+.game-timer-unit + .game-timer-unit {
+  border-left: 1px solid #ddd;
+}
+
+.game-sponsor-container {
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+
+  /*border-top: 1px solid #a9a9a9;*/
+}
+
+.game-sponsor-tag {
+  width: 80px;
+  height: 17px;
+  border-radius: 3px;
+  font-size: 9px;
+  text-align: center;
+  color: #000000;
+  padding: 3px;
+  display: inline-block;
+  margin-bottom: 5px;
+  background-color: #f4f1f1;
+  opacity: 0.5;
+}
+
+.game-match-card {
+  border-radius: 3px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.game-match-vs-circle {
+  background-color: #363535;
+  color: white;
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.game-match-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.flex-btn-panel {
+  /* add the following */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-market {
+  display: block;
+  padding: 5px;
+  text-align: center;
+  /* remove your width and float and add the following */
+  flex-grow: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 0px;
+  background-color: #f4f4f4;
+}
+
+.btn-market.active {
+  /*background-color: #7e878e !important;*/
+  background-color: #3f3f3f !important;
+  border-style: solid;
+  border-color: #3f3f3f;
+  color: white;
+}
+
+.game-row-selected .btn-market {
+  opacity: 0.4;
+}
+
+.game-row-selected .btn-market.active {
+  opacity: 1;
+}
+
+.game-row-selected select {
+  opacity: 0.6;
+}
+
+.game-prize {
+  background-color: #ffcc1a;
+  width: 200px;
+  display: inline-block;
+  font-size: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  letter-spacing: -1.75px;
+}
+
+.game-prize-currency {
+  font-size: 30px;
+}
+
+.game-match-team-logo {
+  margin-top: -5px;
+  margin-right: -5px;
+  margin-bottom: 0px;
+  margin-left: -5px;
+  width: 90px;
+  height: 90px;
+  /*background: url(https://chalkline-teams.s3.amazonaws.com/logos/65.png) center center / auto 50px no-repeat;*/
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto 60px;
+  display: inline-block;
+}
+
+.game-pick-circle {
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  font-size: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  margin-right: 10px;
+  color: #777;
+  transition: all 0.2s ease;
+}
+
+.game-pick-circle.checked {
+  background-color: #8bc540;
+  color: #fff;
+  border-color: transparent;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*** Payment container ***/
+
+.payment-container {
+  background-color: white;
+  padding: 20px;
+}
+
+.payment-container > .row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.btn-100 {
+  width: 100%;
+}
+
+/*** Custom Data Tables ***/
+
+.table-header {
+  background-color: #5a6268;
+  color: #fff;
+  line-height: 24px;
+  font-weight: normal;
+}
+
+.table thead th {
+  font-weight: 500;
+}
+
+.table-header-light {
+  background-color: #7e8081;
+  color: #fff;
+}
+
+.table-search-box {
+  float: left;
+  margin: 3px 0px 8px 0px;
+  height: 33px !important;
+}
+
+.table-search-box:focus {
+  outline: none;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.order-4,
+.caret-4-desc,
+.caret-4-asc {
+  margin-left: 3px;
+}
+
+.btn-clear {
+  float: left;
+  border-radius: 4px;
+  width: 46%;
+}
+
+.btn-export {
+  float: right;
+  border-radius: 4px;
+  width: 46%;
+}
+
+.bet-data {
+  width: 30%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-10 {
+  width: 10%;
+}
+
+.width-15 {
+  width: 15%;
+}
+
+.table-small th,
+.table-small td {
+  padding: 0.15rem;
+  vertical-align: top;
+  border: none;
+}
+
+.bet-detail-bg {
+  padding: 10px 15px 10px 15px;
+  background-color: #f3f2f2;
+}
+
+/*** Datatable paging ***/
+.page-link {
+  color: #495057;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #ffcc1a;
+  border-color: #f9c615;
+}
+
+#pageDropDown {
+  border-radius: 4px;
+  color: #fff;
+}
+
+/*** Generic ***/
+
+.no-padding-left {
+  padding-left: 0px !important;
+}
+
+.padding-right-10 {
+  padding-right: 10px !important;
+}
+
+.margin-5 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.no-border {
+  border: none !important;
+}
+
+/*** Custom input groups ***/
+.input-group-text {
+  padding: 0px 8px 4px 14px;
+}
+
+.form-check-label {
+  color: #5a5a5a;
+  font-size: 13px;
+}
+
+.profile-sub-header {
+  font-weight: 500;
+  font-size: 15px;
+  color: #3e3d3d;
+  display: flex;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}

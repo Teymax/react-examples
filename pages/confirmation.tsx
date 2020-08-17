@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { PageContentWrapper } from '@components/shared'
+import { PageContentWrapper, DefaultThemeLayout } from '@components/shared'
 import { Button } from '@components/UI'
 import Link from 'next/link'
 
@@ -90,9 +90,11 @@ function ConfirmationPage() {
         <title>ChalkLine | Confirmation</title>
       </Head>
 
-      <PageContentWrapper>
-        <ConfirmSection />
-      </PageContentWrapper>
+      <DefaultThemeLayout>
+        <PageContentWrapper>
+          <ConfirmSection />
+        </PageContentWrapper>
+      </DefaultThemeLayout>
     </>
   )
 }
