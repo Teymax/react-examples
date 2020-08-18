@@ -1,9 +1,9 @@
-const path = require('path')
-const withPlugins = require('next-compose-plugins')
-const withImages = require('next-images')
-const withFonts = require('next-fonts')
-const withCSS = require('@zeit/next-css')
-const withSass = require('@zeit/next-sass')
+const path = require('path');
+const withPlugins = require('next-compose-plugins');
+const withImages = require('next-images');
+const withFonts = require('next-fonts');
+const withCSS = require('@zeit/next-css');
+const withSass = require('@zeit/next-sass');
 
 module.exports = withPlugins(
   [
@@ -19,8 +19,8 @@ module.exports = withPlugins(
               name: '[name].[ext]',
             },
           },
-        })
-        return config
+        });
+        return config;
       },
     }),
     withImages,
@@ -43,9 +43,9 @@ module.exports = withPlugins(
         '@static': path.resolve(__dirname, 'static'),
         '@context': path.resolve(__dirname, 'context'),
         '@core': path.resolve(__dirname, 'core'),
-      })
+      });
 
-      return config
+      return config;
     },
   }
-)
+);

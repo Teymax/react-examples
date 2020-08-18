@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import { NavMenu } from './NavMenu';
 // import '@styles/YDTheme/index.scss';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class YDLayout extends React.Component {
   static displayName = YDLayout.name;

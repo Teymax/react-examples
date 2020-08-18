@@ -53,7 +53,9 @@ export class NavMenu extends Component {
         >
           <Container>
             <Link href='/yellow-dark'>
-              <NavbarBrand tag={'a'} to='/yellow-dark'></NavbarBrand>
+              <a>
+                <NavbarBrand tag={'div'} to='/yellow-dark'></NavbarBrand>
+              </a>
             </Link>
             <NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
             <Collapse
