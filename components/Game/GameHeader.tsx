@@ -1,6 +1,6 @@
-import React from 'react'
-import { Label } from '@components/shared'
-import { IGame } from '@store/types/game.types'
+import React from 'react';
+import { Label } from '@components/shared';
+import { IGame } from '@store/types/game.types';
 
 const GameHeader = ({ game }: { game?: IGame }) => (
   <header className='game-page__header header'>
@@ -17,6 +17,6 @@ const GameHeader = ({ game }: { game?: IGame }) => (
 
     <div className='header__footer'>0 of 4 picks</div>
   </header>
-)
+);
 
-export default GameHeader
+export default GameHeader;

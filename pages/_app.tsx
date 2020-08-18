@@ -1,24 +1,22 @@
-import '@styles/globals.scss'
-import { ModalProvider } from '@context/Modal'
-import { AppBar } from '@components/shared'
-import Head from 'next/head'
-import { wrapper } from '@store'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import { useStore } from 'react-redux'
-import redirectTo from 'utils/helpers/redirectTo'
-import cookies from 'next-cookies'
-import { PersistGate } from 'redux-persist/integration/react'
-import JwtDecode from 'jwt-decode'
-import { AppProps } from 'next/app'
+import '@styles/globals.scss';
+import { ModalProvider } from '@context/Modal';
+import Head from 'next/head';
+import { wrapper } from '@store';
+import { useStore } from 'react-redux';
+import redirectTo from 'utils/helpers/redirectTo';
+import cookies from 'next-cookies';
+import { PersistGate } from 'redux-persist/integration/react';
+import JwtDecode from 'jwt-decode';
+import { AppProps } from 'next/app';
 
-const protectedRoutes = ['/dashboard', '/documents', '/pdfs', '/sketches']
+const protectedRoutes = ['/dashboard', '/documents', '/pdfs', '/sketches'];
 
-const protectedAdminRoutes = ['/dashboard/admin']
+const protectedAdminRoutes = ['/dashboard/admin'];
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const store = useStore()
+  const store = useStore();
   // @ts-ignore
-  const persistor = store.__persistor
+  const persistor = store.__persistor;
 
   return (
     <>
@@ -42,40 +40,40 @@ function MyApp({ Component, pageProps }: AppProps) {
         </ModalProvider>
       </div>
     </>
-  )
+  );
 }
 
 MyApp.getInitialProps = async (appContext: any) => {
-  const { ctx } = appContext
-  const { accessToken } = cookies(ctx)
+  const { ctx } = appContext;
+  const { accessToken } = cookies(ctx);
 
-  const { pathname } = ctx
+  const { pathname } = ctx;
 
-  const isProtected = protectedRoutes.find((route) => pathname.startsWith(route))
+  const isProtected = protectedRoutes.find((route) => pathname.startsWith(route));
 
   try {
     if (isProtected) {
-      const { role } = JwtDecode(accessToken || '')
+      const { role } = JwtDecode(accessToken || '');
 
       if (
         role !== 'admin' &&
         protectedAdminRoutes.find((route) => pathname.startsWith(route))
       ) {
-        throw Error
+        throw Error;
       }
     }
   } catch (error) {
-    redirectTo('/', ctx)
+    redirectTo('/', ctx);
   }
 
-  const { Component } = appContext
+  const { Component } = appContext;
   if (Component.getInitialProps) {
     return {
       pageProps: await Component.getInitialProps,
-    }
+    };
   }
 
-  return {}
-}
+  return {};
+};
 
-export default wrapper.withRedux(MyApp)
+export default wrapper.withRedux(MyApp);

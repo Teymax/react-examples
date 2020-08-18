@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const EmailTemplateHeader = () => (
   <div className='email-template__header'>
@@ -11,6 +11,6 @@ const EmailTemplateHeader = () => (
 
     <hr className='email-template__line' />
   </div>
-)
+);
 
-export default EmailTemplateHeader
+export default EmailTemplateHeader;

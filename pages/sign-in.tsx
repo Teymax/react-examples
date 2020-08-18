@@ -1,11 +1,13 @@
-import React from 'react'
-import { Modal, DefaultThemeLayout } from '@components/shared'
-import Head from 'next/head'
-import { LoginForm } from '@components/SignIn'
-import { useModal } from '@hooks'
+import React from 'react';
+import { Modal, DefaultThemeLayout } from '@components/shared';
+import Head from 'next/head';
+import { LoginForm } from '@components/SignIn';
+import { useModal } from '@hooks';
 
 function SignIn() {
-  const { showModal, hideModal } = useModal(() => <LoginForm onFinish={hideModal} />)
+  const { showModal, hideModal } = useModal(() => (
+    <LoginForm onFinish={hideModal} />
+  ));
 
   return (
     <>
@@ -23,7 +25,7 @@ function SignIn() {
         </div>
       </DefaultThemeLayout>
     </>
-  )
+  );
 }
 
-export default SignIn
+export default SignIn;

@@ -1,14 +1,11 @@
-import { FormikValues } from 'formik'
+import { FormikValues } from 'formik';
 
-export const validateField = (
-  key: string,
-  { touched, errors }: FormikValues,
-) => {
+export const validateField = (key: string, { touched, errors }: FormikValues) => {
   if (!touched[key]) {
-    return ''
+    return '';
   } else if (touched[key] && errors[key]) {
-    return 'error'
+    return 'error';
   }
 
-  return 'success'
-}
+  return 'success';
+};

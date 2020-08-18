@@ -1,12 +1,12 @@
-import { customAxios } from '@core'
-import { AxiosPromise } from 'axios'
-import { CHALK_URL } from '@core/axios'
+import { customAxios } from '@core';
+import { AxiosPromise } from 'axios';
+import { CHALK_URL } from '@core/axios';
 
 interface IFetchLeaderboardPayload {
-  seriesNames?: string
-  gameNames?: string
-  gameIds?: string
-  playerIds?: string
+  seriesNames?: string;
+  gameNames?: string;
+  gameIds?: string;
+  playerIds?: string;
 }
 
 export const fetchLeaderboard = (
@@ -14,5 +14,5 @@ export const fetchLeaderboard = (
 ): AxiosPromise<any[]> => {
   return customAxios.get(`${CHALK_URL}/leaderboard`, {
     params: options,
-  })
-}
+  });
+};

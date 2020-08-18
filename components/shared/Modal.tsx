@@ -1,9 +1,9 @@
-import React from 'react'
-import Overlay from './Overlay'
-import { ModalContext } from '@context/Modal'
+import React from 'react';
+import Overlay from './Overlay';
+import { ModalContext } from '@context/Modal';
 
 function Modal({ children }: any) {
-  const { hideModal } = React.useContext(ModalContext)
+  const { hideModal } = React.useContext(ModalContext);
 
   return (
     <Overlay action={hideModal}>
@@ -11,7 +11,7 @@ function Modal({ children }: any) {
         <div className='modal__container'>{children}</div>
       </div>
     </Overlay>
-  )
+  );
 }
 
-export default Modal
+export default Modal;

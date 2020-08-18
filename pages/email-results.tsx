@@ -1,11 +1,11 @@
-import React from 'react'
-import Head from 'next/head'
-import { PageContentWrapper, DefaultThemeLayout } from '@components/shared'
+import React from 'react';
+import Head from 'next/head';
+import { PageContentWrapper, DefaultThemeLayout } from '@components/shared';
 import {
   FollowSection,
   EmailTemplateSection,
   EmailTemplateHeader,
-} from '@components/Email'
+} from '@components/Email';
 
 const EmailTemplateResultsBody = () => (
   <div className='email-template__body email-template-results__body'>
@@ -25,7 +25,7 @@ const EmailTemplateResultsBody = () => (
       <button className='btn btn--primary'>View your results</button>
     </div>
   </div>
-)
+);
 
 function EmailResultsPage() {
   return (
@@ -46,7 +46,7 @@ function EmailResultsPage() {
         </PageContentWrapper>
       </DefaultThemeLayout>
     </>
-  )
+  );
 }
 
-export default EmailResultsPage
+export default EmailResultsPage;

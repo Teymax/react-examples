@@ -1,6 +1,6 @@
-import React from 'react'
-import AccountInfoItem from './AccountInfoItem'
-import { FormikProps } from 'formik'
+import React from 'react';
+import AccountInfoItem from './AccountInfoItem';
+import { FormikProps } from 'formik';
 
 const infoItems = [
   {
@@ -48,7 +48,7 @@ const infoItems = [
     value: 'admin@admin.com',
     metaName: 'toReceiveOffers',
   },
-]
+];
 
 function AccountInfoItems({ formik }: { formik: FormikProps<any> }) {
   return (
@@ -62,7 +62,7 @@ function AccountInfoItems({ formik }: { formik: FormikProps<any> }) {
         />
       ))}
     </>
-  )
+  );
 }
 
-export default AccountInfoItems
+export default AccountInfoItems;

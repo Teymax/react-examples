@@ -1,8 +1,8 @@
-import React from 'react'
-import SportCards from './SportCards'
-import { MultiFormNav, FormProgressBar, MultiFormHeader } from '../MultiForm'
-import { IMultiForm } from '@components/SignUp/RegistrationMultiFormBase'
-import { IRegisterFormState } from '@components/SignUp/RegistrationMultiForm'
+import React from 'react';
+import SportCards from './SportCards';
+import { MultiFormNav, FormProgressBar, MultiFormHeader } from '../MultiForm';
+import { IMultiForm } from '@components/SignUp/RegistrationMultiFormBase';
+import { IRegisterFormState } from '@components/SignUp/RegistrationMultiForm';
 
 const RegisterFormSportSelect = ({
   actions: { next },
@@ -12,11 +12,11 @@ const RegisterFormSportSelect = ({
 }: any) => {
   const changeSportTypeHandler = (sportType: string) => {
     if (sportTypes.find((item) => item === sportType)) {
-      return onSportTypeChange(sportTypes.filter((item) => item !== sportType))
+      return onSportTypeChange(sportTypes.filter((item) => item !== sportType));
     }
 
-    return onSportTypeChange([...sportTypes, sportType])
-  }
+    return onSportTypeChange([...sportTypes, sportType]);
+  };
 
   return (
     <div className='form'>
@@ -37,7 +37,7 @@ const RegisterFormSportSelect = ({
         <MultiFormNav actions={{ next }} isActive={!!sportTypes.length} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RegisterFormSportSelect
+export default RegisterFormSportSelect;

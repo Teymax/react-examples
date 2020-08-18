@@ -1,5 +1,5 @@
-import React from 'react'
-import { PageContentWrapper } from '@components/shared'
+import React from 'react';
+import { PageContentWrapper } from '@components/shared';
 
 function AccountPageLayout({ children }: any) {
   return (
@@ -12,7 +12,7 @@ function AccountPageLayout({ children }: any) {
 
       {children}
     </PageContentWrapper>
-  )
+  );
 }
 
-export default AccountPageLayout
+export default AccountPageLayout;

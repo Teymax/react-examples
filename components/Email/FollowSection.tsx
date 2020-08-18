@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function FollowSection() {
   return (
@@ -20,7 +20,7 @@ function FollowSection() {
         Click here to <a className='link link--underline'>unsubscribe</a>
       </div>
     </div>
-  )
+  );
 }
 
-export default FollowSection
+export default FollowSection;

@@ -1,1 +1,1 @@
-export { validateField } from './validateField'
+export { validateField } from './validateField';

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button } from '@components/UI'
+import React from 'react';
+import { Button } from '@components/UI';
 
 const GameGroundFight = () => (
   <div className='game-ground__fight fight'>
@@ -34,6 +34,6 @@ const GameGroundFight = () => (
       <Button styleType='ghost'>Random</Button>
     </div>
   </div>
-)
+);
 
-export default GameGroundFight
+export default GameGroundFight;

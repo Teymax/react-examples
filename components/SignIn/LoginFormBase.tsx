@@ -1,8 +1,8 @@
-import React from 'react'
-import { MultiFormHeader } from '@components/shared'
-import { FormInput } from '@components/UI'
-import { FormikProps } from 'formik'
-import { FormikLoginProps } from './LoginForm'
+import React from 'react';
+import { MultiFormHeader } from '@components/shared';
+import { FormInput } from '@components/UI';
+import { FormikProps } from 'formik';
+import { FormikLoginProps } from './LoginForm';
 
 function LoginFormBase({ formik }: { formik: FormikProps<FormikLoginProps> }) {
   return (
@@ -42,7 +42,7 @@ function LoginFormBase({ formik }: { formik: FormikProps<FormikLoginProps> }) {
         </div>
       </div>
     </form>
-  )
+  );
 }
 
-export default LoginFormBase
+export default LoginFormBase;

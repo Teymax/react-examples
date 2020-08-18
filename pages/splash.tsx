@@ -1,7 +1,7 @@
-import React from 'react'
-import Head from 'next/head'
-import { SplashSection } from '@components/Splash'
-import { PageContentWrapper, DefaultThemeLayout } from '@components/shared'
+import React from 'react';
+import Head from 'next/head';
+import { SplashSection } from '@components/Splash';
+import { PageContentWrapper, DefaultThemeLayout } from '@components/shared';
 
 function SplashPage() {
   return (
@@ -16,7 +16,7 @@ function SplashPage() {
         </PageContentWrapper>
       </DefaultThemeLayout>
     </>
-  )
+  );
 }
 
-export default SplashPage
+export default SplashPage;

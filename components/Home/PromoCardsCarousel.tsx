@@ -1,5 +1,5 @@
-import React from 'react'
-import { Carousel } from 'react-responsive-carousel'
+import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
 
 const PromoCard = () => (
   <div className='promo-card' style={{ backgroundImage: 'url("/img/card-bg.jpg")' }}>
@@ -13,10 +13,10 @@ const PromoCard = () => (
       </small>
     </div>
   </div>
-)
+);
 
 const PromoCardsCarousel = () => {
-  const [currentSlide, setCurrentSlide] = React.useState(0)
+  const [currentSlide, setCurrentSlide] = React.useState(0);
 
   return (
     <div className='promo-cards section'>
@@ -53,7 +53,7 @@ const PromoCardsCarousel = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PromoCardsCarousel
+export default PromoCardsCarousel;

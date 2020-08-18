@@ -1,1 +1,1 @@
-export { default as AccountPointCards } from './AccountPointCards'
+export { default as AccountPointCards } from './AccountPointCards';

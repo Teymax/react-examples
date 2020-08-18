@@ -1,7 +1,7 @@
-import React from 'react'
-import Head from 'next/head'
-import { LeaderboardSection } from '@components/Leaderboard'
-import { PageContentWrapper, DefaultThemeLayout } from '@components/shared'
+import React from 'react';
+import Head from 'next/head';
+import { LeaderboardSection } from '@components/Leaderboard';
+import { PageContentWrapper, DefaultThemeLayout } from '@components/shared';
 
 function LeaderboardPage() {
   return (
@@ -16,7 +16,7 @@ function LeaderboardPage() {
         </PageContentWrapper>
       </DefaultThemeLayout>
     </>
-  )
+  );
 }
 
-export default LeaderboardPage
+export default LeaderboardPage;

@@ -1,12 +1,12 @@
-import { IBet, BET_SET, BetActionType } from '@store/types/bet.types'
+import { IBet, BET_SET, BetActionType } from '@store/types/bet.types';
 
 interface IBetState {
-  bets: Array<IBet>
+  bets: Array<IBet>;
 }
 
 const initialState: IBetState = {
   bets: [],
-}
+};
 
 const reducer = (
   state: IBetState = initialState,
@@ -17,11 +17,11 @@ const reducer = (
       return {
         ...state,
         bets: action.payload.bets,
-      }
+      };
 
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

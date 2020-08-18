@@ -1,10 +1,10 @@
-import React from 'react'
-import Head from 'next/head'
-import { FormInput } from '@components/UI'
-import SignUpFormBase from '@components/SignUp/SignUpFormBase'
-import { useFormik } from 'formik'
-import { SignUpForm } from '@components/SignUp'
-import { DefaultThemeLayout } from '@components/shared'
+import React from 'react';
+import Head from 'next/head';
+import { FormInput } from '@components/UI';
+import SignUpFormBase from '@components/SignUp/SignUpFormBase';
+import { useFormik } from 'formik';
+import { SignUpForm } from '@components/SignUp';
+import { DefaultThemeLayout } from '@components/shared';
 
 const SignUpSection = () => (
   <section className='section sign-up-section'>
@@ -23,7 +23,7 @@ const SignUpSection = () => (
       </div>
     </div>
   </section>
-)
+);
 
 function SignUp() {
   return (
@@ -37,7 +37,7 @@ function SignUp() {
         <SignUpSection />
       </DefaultThemeLayout>
     </>
-  )
+  );
 }
 
-export default SignUp
+export default SignUp;

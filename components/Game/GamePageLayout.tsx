@@ -1,5 +1,5 @@
-import React from 'react'
-import { PageBack, PageContentWrapper } from '@components/shared'
+import React from 'react';
+import { PageBack, PageContentWrapper } from '@components/shared';
 
 function GamePageLayout({ children }: any) {
   return (
@@ -12,7 +12,7 @@ function GamePageLayout({ children }: any) {
 
       <div className='container'>{children}</div>
     </PageContentWrapper>
-  )
+  );
 }
 
-export default GamePageLayout
+export default GamePageLayout;

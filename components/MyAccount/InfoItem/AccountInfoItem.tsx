@@ -1,14 +1,14 @@
-import React from 'react'
-import { FormikProps } from 'formik'
+import React from 'react';
+import { FormikProps } from 'formik';
 
 const AccountInfoItem = ({
   title,
   formik,
   metaName,
 }: {
-  title: string
-  metaName: string
-  formik: FormikProps<any>
+  title: string;
+  metaName: string;
+  formik: FormikProps<any>;
 }) => {
   return (
     <div className='info__item item'>
@@ -21,7 +21,7 @@ const AccountInfoItem = ({
         value={formik.values[metaName]}
       />
     </div>
-  )
-}
+  );
+};
 
-export default AccountInfoItem
+export default AccountInfoItem;

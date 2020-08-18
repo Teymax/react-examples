@@ -1,14 +1,14 @@
-import React from 'react'
-import classNames from 'classnames'
+import React from 'react';
+import classNames from 'classnames';
 
 function PageContentWrapper({
   children,
   className = '',
 }: {
-  children: any
-  className?: string
+  children: any;
+  className?: string;
 }) {
-  return <div className={classNames('page__body', className)}>{children}</div>
+  return <div className={classNames('page__body', className)}>{children}</div>;
 }
 
-export default PageContentWrapper
+export default PageContentWrapper;

@@ -1,6 +1,6 @@
-import React from 'react'
-import { Button } from '@components/UI'
-import BaseballSvg from '../../public/img/baseball.svg'
+import React from 'react';
+import { Button } from '@components/UI';
+import BaseballSvg from '../../public/img/baseball.svg';
 
 function SplashSection() {
   return (
@@ -39,7 +39,7 @@ function SplashSection() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default SplashSection
+export default SplashSection;

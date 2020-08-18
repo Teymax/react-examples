@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import {
   Carousel,
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
-} from 'reactstrap'
+} from 'reactstrap';
 
 const items = [
   {
@@ -20,28 +20,28 @@ const items = [
     altText: 'Slide 2',
     caption: 'Slide 2',
   },
-]
+];
 
 const Example = (props) => {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [animating, setAnimating] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
 
   const next = () => {
-    if (animating) return
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1
-    setActiveIndex(nextIndex)
-  }
+    if (animating) return;
+    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
+  };
 
   const previous = () => {
-    if (animating) return
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1
-    setActiveIndex(nextIndex)
-  }
+    if (animating) return;
+    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    setActiveIndex(nextIndex);
+  };
 
   const goToIndex = (newIndex) => {
-    if (animating) return
-    setActiveIndex(newIndex)
-  }
+    if (animating) return;
+    setActiveIndex(newIndex);
+  };
 
   const slides = items.map((item) => {
     return (
@@ -53,8 +53,8 @@ const Example = (props) => {
         <img src={item.src} alt={item.altText} />
         <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
       </CarouselItem>
-    )
-  })
+    );
+  });
 
   return (
     <Carousel activeIndex={activeIndex} next={next} previous={previous}>
@@ -71,7 +71,7 @@ const Example = (props) => {
       />
       <CarouselControl direction='next' directionText='Next' onClickHandler={next} />
     </Carousel>
-  )
-}
+  );
+};
 
-export default Example
+export default Example;

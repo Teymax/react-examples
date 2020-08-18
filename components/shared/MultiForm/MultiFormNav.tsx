@@ -1,7 +1,7 @@
-import React from 'react'
-import ArrowRightSvg from '../../../public/img/arrow_right.svg'
-import classNames from 'classnames'
-import { FormikProps } from 'formik'
+import React from 'react';
+import ArrowRightSvg from '../../../public/img/arrow_right.svg';
+import classNames from 'classnames';
+import { FormikProps } from 'formik';
 
 const MultiFormNav = ({
   actions: { next },
@@ -11,12 +11,12 @@ const MultiFormNav = ({
   toSendSubmit = false,
   isSkippable = false,
 }: {
-  isActive: boolean
-  isFinalStep?: any
-  formik?: FormikProps<any>
-  actions: any
-  toSendSubmit?: boolean
-  isSkippable?: boolean
+  isActive: boolean;
+  isFinalStep?: any;
+  formik?: FormikProps<any>;
+  actions: any;
+  toSendSubmit?: boolean;
+  isSkippable?: boolean;
 }) => (
   <div className='form__btns'>
     <button
@@ -31,8 +31,8 @@ const MultiFormNav = ({
           ? (formik.handleSubmit as any)
           : toSendSubmit
           ? (e: any) => {
-              formik.handleSubmit(e)
-              next(e)
+              formik.handleSubmit(e);
+              next(e);
             }
           : null
       }
@@ -49,6 +49,6 @@ const MultiFormNav = ({
       </button>
     )}
   </div>
-)
+);
 
-export default MultiFormNav
+export default MultiFormNav;

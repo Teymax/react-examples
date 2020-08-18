@@ -1,27 +1,27 @@
-import React from 'react'
-import classNames from 'classnames'
-import SuccessMarkSvg from '../../public/img/success_mark.svg'
-import ErrorMarkSvg from '../../public/img/error_mark.svg'
-import { validateField } from '@utils'
-import { FormikProps } from 'formik'
+import React from 'react';
+import classNames from 'classnames';
+import SuccessMarkSvg from '../../public/img/success_mark.svg';
+import ErrorMarkSvg from '../../public/img/error_mark.svg';
+import { validateField } from '@utils';
+import { FormikProps } from 'formik';
 
 const getIcon = (status: 'error' | 'success' | '') => {
   switch (status) {
     case 'error':
-      return <ErrorMarkSvg />
+      return <ErrorMarkSvg />;
 
     case 'success':
-      return <SuccessMarkSvg />
+      return <SuccessMarkSvg />;
     default:
-      break
+      break;
   }
-}
+};
 
 const FormInputValidationIcon = ({
   status = '',
 }: {
-  status?: 'error' | 'success' | ''
-}) => <div className={classNames('field__icon', status)}>{getIcon(status)}</div>
+  status?: 'error' | 'success' | '';
+}) => <div className={classNames('field__icon', status)}>{getIcon(status)}</div>;
 
 function FormInput({
   label = '',
@@ -29,13 +29,13 @@ function FormInput({
   icon = null,
   ...inputProps
 }: {
-  label?: string
-  formik: FormikProps<any>
-  icon?: JSX.Element
+  label?: string;
+  formik: FormikProps<any>;
+  icon?: JSX.Element;
 } & React.HTMLProps<HTMLInputElement>) {
   const status = React.useMemo(() => validateField(inputProps.name, formik), [
     formik,
-  ])
+  ]);
 
   return (
     <div className={classNames('field', status)}>
@@ -57,7 +57,7 @@ function FormInput({
         )}
       </div>
     </div>
-  )
+  );
 }
 
-export default FormInput
+export default FormInput;

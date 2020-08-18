@@ -1,5 +1,5 @@
-import React from 'react'
-import classNames from 'classnames'
+import React from 'react';
+import classNames from 'classnames';
 
 const GameGroundBet = ({
   header,
@@ -7,10 +7,10 @@ const GameGroundBet = ({
   cardClassName = '',
   additionalCardBlock = null,
 }: {
-  header: string
-  cards: Array<{ title: string | number; subtitle?: string }>
-  cardClassName?: string
-  additionalCardBlock?: JSX.Element
+  header: string;
+  cards: Array<{ title: string | number; subtitle?: string }>;
+  cardClassName?: string;
+  additionalCardBlock?: JSX.Element;
 }) => (
   <div className='bets__item bet'>
     <h3 className='bet__header'>{header}</h3>
@@ -24,7 +24,7 @@ const GameGroundBet = ({
     </div>
     {additionalCardBlock}
   </div>
-)
+);
 
 const GameGroundBets = () => (
   <div className='game-ground__bets bets'>
@@ -98,6 +98,6 @@ const GameGroundBets = () => (
       ]}
     />
   </div>
-)
+);
 
-export default GameGroundBets
+export default GameGroundBets;

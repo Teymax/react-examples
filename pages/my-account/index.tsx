@@ -1,6 +1,7 @@
-import React from 'react'
-import Head from 'next/head'
-import { SectionAccountManagement, AccountPageLayout } from '@components/MyAccount'
+import React from 'react';
+import Head from 'next/head';
+import { SectionAccountManagement, AccountPageLayout } from '@components/MyAccount';
+import { DefaultThemeLayout } from '@components/shared';
 
 function MyAccount() {
   return (
@@ -9,11 +10,13 @@ function MyAccount() {
         <title>ChalkLine | My Account</title>
       </Head>
 
-      <AccountPageLayout>
-        <SectionAccountManagement />
-      </AccountPageLayout>
+      <DefaultThemeLayout>
+        <AccountPageLayout>
+          <SectionAccountManagement />
+        </AccountPageLayout>
+      </DefaultThemeLayout>
     </>
-  )
+  );
 }
 
-export default MyAccount
+export default MyAccount;

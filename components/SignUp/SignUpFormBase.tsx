@@ -1,11 +1,11 @@
-import React from 'react'
-import { FormInput } from '@components/UI'
-import { FormikProps } from 'formik'
-import { IRegisterProps } from './SignUpForm'
-import EmailSvg from '../../public/img/mail.svg'
-import LockSvg from '../../public/img/lock.svg'
-import ProfileSvg from '../../public/img/profile.svg'
-import CalendarSvg from '../../public/img/calendar.svg'
+import React from 'react';
+import { FormInput } from '@components/UI';
+import { FormikProps } from 'formik';
+import { IRegisterProps } from './SignUpForm';
+import EmailSvg from '../../public/img/mail.svg';
+import LockSvg from '../../public/img/lock.svg';
+import ProfileSvg from '../../public/img/profile.svg';
+import CalendarSvg from '../../public/img/calendar.svg';
 
 const SignUpFormBase = ({ formik }: { formik: FormikProps<IRegisterProps> }) => (
   <form className='sign-up-form form' onSubmit={formik.handleSubmit}>
@@ -95,6 +95,6 @@ const SignUpFormBase = ({ formik }: { formik: FormikProps<IRegisterProps> }) => 
       </div>
     </div>
   </form>
-)
+);
 
-export default SignUpFormBase
+export default SignUpFormBase;

@@ -1,6 +1,6 @@
-import React from 'react'
-import { TableData } from '@components/UI'
-import { leaderboardService } from '@services'
+import React from 'react';
+import { TableData } from '@components/UI';
+import { leaderboardService } from '@services';
 
 const tableInfo = {
   body: [
@@ -29,20 +29,20 @@ const tableInfo = {
       points: '9,975,040',
     },
   ],
-}
+};
 
 function LeaderboardSection() {
-  const [leaderboardData, setLeaderboardData] = React.useState([])
+  const [leaderboardData, setLeaderboardData] = React.useState([]);
 
   React.useEffect(() => {
-    ;(async () => {
+    (async () => {
       const res = await leaderboardService.fetchLeaderboard({
         seriesNames: 'NHL',
-      })
+      });
 
-      console.log(res)
-    })()
-  }, [])
+      console.log(res);
+    })();
+  }, []);
 
   return (
     <div className='section leaderboard'>
@@ -91,7 +91,7 @@ function LeaderboardSection() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default LeaderboardSection
+export default LeaderboardSection;

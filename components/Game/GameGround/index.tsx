@@ -1,8 +1,8 @@
-import React from 'react'
-import GameGroundFight from './GameGroundFight'
-import classNames from 'classnames'
-import GameGroundBets from './GameGroundBets'
-import { Button } from '@components/UI'
+import React from 'react';
+import GameGroundFight from './GameGroundFight';
+import classNames from 'classnames';
+import GameGroundBets from './GameGroundBets';
+import { Button } from '@components/UI';
 
 const GameGroundFooter = () => (
   <div className='game-ground__footer footer'>
@@ -16,7 +16,7 @@ const GameGroundFooter = () => (
       <span className='terms__text--highlight'>Terms & Conditions.</span>
     </div>
   </div>
-)
+);
 
 const GameGround = () => (
   <div className='game-ground'>
@@ -26,6 +26,6 @@ const GameGround = () => (
 
     <GameGroundFooter />
   </div>
-)
+);
 
-export default GameGround
+export default GameGround;

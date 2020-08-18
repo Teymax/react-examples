@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   Collapse,
   Container,
@@ -11,38 +11,38 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-} from 'reactstrap'
-import Link from 'next/link'
+} from 'reactstrap';
+import Link from 'next/link';
 
 export class NavMenu extends Component {
-  static displayName = NavMenu.name
-  static contextType = null
+  static displayName = NavMenu.name;
+  static contextType = null;
 
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.toggleNavbar = this.toggleNavbar.bind(this)
-    this.logout = this.logout.bind(this)
+    this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   state = {
     collapsed: true,
-  }
+  };
 
   toggleNavbar() {
     this.setState({
       collapsed: !this.state.collapsed,
-    })
+    });
   }
 
   logout() {
-    this.toggleNavbar()
+    this.toggleNavbar();
 
-    this.context.logout()
+    this.context.logout();
   }
 
   render() {
-    const isLoggedIn = false
+    const isLoggedIn = false;
     // this.context.isLoggedIn()
 
     return (
@@ -52,7 +52,9 @@ export class NavMenu extends Component {
           light
         >
           <Container>
-            <NavbarBrand tag={'a'} to='/'></NavbarBrand>
+            <Link href='/yellow-dark'>
+              <NavbarBrand tag={'a'} to='/yellow-dark'></NavbarBrand>
+            </Link>
             <NavbarToggler onClick={this.toggleNavbar} className='mr-2' />
             <Collapse
               className='d-sm-inline-flex flex-sm-row-reverse'
@@ -61,12 +63,11 @@ export class NavMenu extends Component {
             >
               <ul className='navbar-nav flex-grow'>
                 <NavItem>
-                  <Link href='/'>
+                  <Link href='/yellow-dark'>
                     <NavLink
                       tag={'a'}
                       className='text-dark'
                       onClick={this.toggleNavbar}
-                      to='/'
                     >
                       Home
                     </NavLink>
@@ -74,26 +75,30 @@ export class NavMenu extends Component {
                 </NavItem>
                 {!isLoggedIn && (
                   <NavItem>
-                    <NavLink
-                      tag={'a'}
-                      className='text-dark'
-                      onClick={this.toggleNavbar}
-                      to='/sign-in'
-                    >
-                      Sign In
-                    </NavLink>
+                    <Link href='/yellow-dark/sign-in'>
+                      <NavLink
+                        tag={'a'}
+                        className='text-dark'
+                        onClick={this.toggleNavbar}
+                        to='/yellow-dark/sign-in'
+                      >
+                        Sign In
+                      </NavLink>
+                    </Link>
                   </NavItem>
                 )}
                 {!isLoggedIn && (
                   <NavItem>
-                    <NavLink
-                      tag={'a'}
-                      className='text-dark'
-                      onClick={this.toggleNavbar}
-                      to='/register'
-                    >
-                      Register
-                    </NavLink>
+                    <Link href='/yellow-dark/register'>
+                      <NavLink
+                        tag={'a'}
+                        className='text-dark'
+                        onClick={this.toggleNavbar}
+                        to='/yellow-dark/register'
+                      >
+                        Register
+                      </NavLink>
+                    </Link>
                   </NavItem>
                 )}
                 {isLoggedIn && (
@@ -202,6 +207,6 @@ export class NavMenu extends Component {
           </Container>
         </Navbar>
       </header>
-    )
+    );
   }
 }

@@ -1,16 +1,14 @@
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.css'
-import '@styles/YDTheme/index.scss'
-
-import { Container } from 'reactstrap'
-import { NavMenu } from './NavMenu'
+import React from 'react';
+import { Container } from 'reactstrap';
+import { NavMenu } from './NavMenu';
+// import '@styles/YDTheme/index.scss';
 
 export default class YDLayout extends React.Component {
-  static displayName = YDLayout.name
+  static displayName = YDLayout.name;
 
   render() {
     return (
-      <div>
+      <div className='use-bootstrap'>
         <div className='body-content'>
           <NavMenu />
           <Container className='main-container'>{this.props.children}</Container>
@@ -19,6 +17,6 @@ export default class YDLayout extends React.Component {
           <span className='text-muted'></span>
         </footer>
       </div>
-    )
+    );
   }
 }

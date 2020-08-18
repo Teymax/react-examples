@@ -1,17 +1,17 @@
-import React from 'react'
-import LoginFormBase from './LoginFormBase'
-import { useFormik } from 'formik'
-import * as Yup from 'yup'
-import { useDispatch } from 'react-redux'
-import { authActions } from '@store/actions'
+import React from 'react';
+import LoginFormBase from './LoginFormBase';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { authActions } from '@store/actions';
 
 export interface FormikLoginProps {
-  email: string
-  password: string
+  email: string;
+  password: string;
 }
 
 function LoginForm({ onFinish }: any) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const formik = useFormik<FormikLoginProps>({
     initialValues: {
@@ -28,13 +28,13 @@ function LoginForm({ onFinish }: any) {
       const loginData = {
         username: value.email,
         password: value.password,
-      }
+      };
 
-      ;(dispatch(authActions.loginRequest(loginData)) as any).then(onFinish)
+      (dispatch(authActions.loginRequest(loginData)) as any).then(onFinish);
     },
-  })
+  });
 
-  return <LoginFormBase formik={formik} />
+  return <LoginFormBase formik={formik} />;
 }
 
-export default LoginForm
+export default LoginForm;

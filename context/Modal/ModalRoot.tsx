@@ -1,6 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Modal } from '@components/shared'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Modal } from '@components/shared';
 
 function ModalRoot({ component: RootComponent, isVisible }: any) {
   return process.browser && isVisible
@@ -8,9 +8,9 @@ function ModalRoot({ component: RootComponent, isVisible }: any) {
         <Modal>
           <RootComponent />
         </Modal>,
-        document.body,
+        document.body
       )
-    : null
+    : null;
 }
 
-export default ModalRoot
+export default ModalRoot;

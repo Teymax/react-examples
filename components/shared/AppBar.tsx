@@ -1,17 +1,17 @@
-import React from 'react'
-import Link from 'next/link'
-import AccountSvg from '../../public/img/account.svg'
-import PicksSvg from '../../public/img/picks.svg'
-import SignOutSvg from '../../public/img/sign_out.svg'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
-import Icon from '@material-ui/core/Icon'
-import classNames from 'classnames'
-import { useToggler } from '@hooks'
-import { useRouter } from 'next/router'
-import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '@store/reducers'
-import { Button } from '@components/UI'
-import { authActions } from '@store/actions'
+import React from 'react';
+import Link from 'next/link';
+import AccountSvg from '../../public/img/account.svg';
+import PicksSvg from '../../public/img/picks.svg';
+import SignOutSvg from '../../public/img/sign_out.svg';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Icon from '@material-ui/core/Icon';
+import classNames from 'classnames';
+import { useToggler } from '@hooks';
+import { useRouter } from 'next/router';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '@store/reducers';
+import { Button } from '@components/UI';
+import { authActions } from '@store/actions';
 
 const navLinks = [
   {
@@ -36,22 +36,22 @@ const navLinks = [
 
     icon: <SignOutSvg />,
   },
-]
+];
 
 function AppBar() {
-  const matches = useMediaQuery('(min-width:835px)')
-  const { toggle, isVisible } = useToggler()
-  const router = useRouter()
+  const matches = useMediaQuery('(min-width:835px)');
+  const { toggle, isVisible } = useToggler();
+  const router = useRouter();
   const { isLoggedIn, user } = useSelector((state: RootState) => ({
     user: state.auth.user,
     isLoggedIn: state.auth.isLoggedIn,
-  }))
-  const dispatch = useDispatch()
+  }));
+  const dispatch = useDispatch();
 
   const renderLinks = (className, iconClassName) =>
     navLinks.reduce((acc, link) => {
       if (isLoggedIn && !link.forLoggedUser) {
-        return acc
+        return acc;
       }
 
       return [
@@ -66,8 +66,8 @@ function AppBar() {
             {link.name}
           </a>
         </Link>,
-      ]
-    }, [])
+      ];
+    }, []);
 
   const LoggedAccount = () => (
     <>
@@ -89,7 +89,7 @@ function AppBar() {
         Sign out
       </Button>
     </>
-  )
+  );
 
   return (
     <div className={classNames('app-bar')}>
@@ -158,7 +158,7 @@ function AppBar() {
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default AppBar
+export default AppBar;

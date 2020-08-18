@@ -1,5 +1,5 @@
-import React from 'react'
-import classNames from 'classnames'
+import React from 'react';
+import classNames from 'classnames';
 
 function Button({
   styleType = 'style_default',
@@ -8,10 +8,10 @@ function Button({
   size = 'size_default',
   ...btnProps
 }: {
-  styleType?: 'primary' | 'secondary' | 'style_default' | 'link' | 'ghost'
-  size?: 'normal' | 'tiny' | 'size_default'
-  children?: any
-  className?: string
+  styleType?: 'primary' | 'secondary' | 'style_default' | 'link' | 'ghost';
+  size?: 'normal' | 'tiny' | 'size_default';
+  children?: any;
+  className?: string;
 } & React.HTMLAttributes<HTMLButtonElement>) {
   return (
     <button
@@ -20,7 +20,7 @@ function Button({
     >
       {children}
     </button>
-  )
+  );
 }
 
-export default Button
+export default Button;

@@ -1,5 +1,6 @@
-import React from 'react'
-import AppBar from './AppBar'
+import React from 'react';
+import AppBar from './AppBar';
+import '@styles/index.scss';
 
 function DefaultThemeLayout({ children }: { children: any }) {
   return (
@@ -7,7 +8,7 @@ function DefaultThemeLayout({ children }: { children: any }) {
       <AppBar />
       {children}
     </>
-  )
+  );
 }
 
-export default DefaultThemeLayout
+export default DefaultThemeLayout;

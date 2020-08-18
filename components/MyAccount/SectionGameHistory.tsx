@@ -1,7 +1,7 @@
-import React from 'react'
-import { TableData, Button } from '@components/UI'
-import { betActions } from '@store/actions'
-import { useDispatch } from 'react-redux'
+import React from 'react';
+import { TableData, Button } from '@components/UI';
+import { betActions } from '@store/actions';
+import { useDispatch } from 'react-redux';
 const tableInfo = {
   headers: ['Date', 'Game'],
   body: [
@@ -10,14 +10,14 @@ const tableInfo = {
       game: 'adadawdawda',
     },
   ],
-}
+};
 
 const SectionGameHistory = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
-    dispatch(betActions.fetchBetsRequest())
-  }, [])
+    dispatch(betActions.fetchBetsRequest());
+  }, []);
 
   return (
     <section className='section game-history'>
@@ -43,7 +43,7 @@ const SectionGameHistory = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default SectionGameHistory
+export default SectionGameHistory;

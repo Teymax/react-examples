@@ -1,8 +1,8 @@
-import React from 'react'
-import { MultiFormNav, MultiFormHeader, FormProgressBar } from '../MultiForm'
-import { FormInput } from '@components/UI'
-import { IMultiForm } from '@components/SignUp/RegistrationMultiFormBase'
-import { IRegisterFormState } from '@components/SignUp/RegistrationMultiForm'
+import React from 'react';
+import { MultiFormNav, MultiFormHeader, FormProgressBar } from '../MultiForm';
+import { FormInput } from '@components/UI';
+import { IMultiForm } from '@components/SignUp/RegistrationMultiFormBase';
+import { IRegisterFormState } from '@components/SignUp/RegistrationMultiForm';
 
 const RegisterFormBasics = ({
   actions: { next },
@@ -55,7 +55,7 @@ const RegisterFormBasics = ({
         />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default RegisterFormBasics
+export default RegisterFormBasics;

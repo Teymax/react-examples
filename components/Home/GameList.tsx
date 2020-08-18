@@ -1,12 +1,12 @@
-import React from 'react'
-import BaseBallSvg from '../../public/img/baseball.svg'
-import ArrowDownSvg from '../../public/img/arrow_down.svg'
-import Link from 'next/link'
-import { Label } from '@components/shared'
-import { useSelector, useDispatch } from 'react-redux'
-import { IGame } from '@store/types/game.types'
-import { RootState } from '@store/reducers'
-import { gameActions } from '@store/actions'
+import React from 'react';
+import BaseBallSvg from '../../public/img/baseball.svg';
+import ArrowDownSvg from '../../public/img/arrow_down.svg';
+import Link from 'next/link';
+import { Label } from '@components/shared';
+import { useSelector, useDispatch } from 'react-redux';
+import { IGame } from '@store/types/game.types';
+import { RootState } from '@store/reducers';
+import { gameActions } from '@store/actions';
 
 const GameListItem = ({ game }: { game: IGame }) => (
   <div className='game'>
@@ -31,15 +31,15 @@ const GameListItem = ({ game }: { game: IGame }) => (
       </Link>
     </div>
   </div>
-)
+);
 
 const GameListItems = () => {
-  const { games } = useSelector((state: RootState) => ({ games: state.game.games }))
-  const dispatch = useDispatch()
+  const { games } = useSelector((state: RootState) => ({ games: state.game.games }));
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
-    dispatch(gameActions.fetchMultipleGamesRequest())
-  }, [])
+    dispatch(gameActions.fetchMultipleGamesRequest());
+  }, []);
 
   return (
     <section className='game-list__games section--highlight'>
@@ -49,8 +49,8 @@ const GameListItems = () => {
         games.map((game) => <GameListItem key={game.id} game={game} />)
       )}
     </section>
-  )
-}
+  );
+};
 
 function GameList() {
   return (
@@ -64,7 +64,7 @@ function GameList() {
 
       <GameListItems />
     </div>
-  )
+  );
 }
 
-export default GameList
+export default GameList;

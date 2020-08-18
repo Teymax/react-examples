@@ -1,7 +1,7 @@
-import React from 'react'
-import Head from 'next/head'
-import { PageContentWrapper, Divider, DefaultThemeLayout } from '@components/shared'
-import { Button } from '@components/UI'
+import React from 'react';
+import Head from 'next/head';
+import { PageContentWrapper, Divider, DefaultThemeLayout } from '@components/shared';
+import { Button } from '@components/UI';
 
 const PicksTableCard = () => (
   <div className='picks-card'>
@@ -21,7 +21,7 @@ const PicksTableCard = () => (
       </div>
     </div>
   </div>
-)
+);
 
 const PopularPicksTable = () => (
   <div className='popular-picks__table picks-table'>
@@ -35,7 +35,7 @@ const PopularPicksTable = () => (
       <PicksTableCard />
     </div>
   </div>
-)
+);
 
 function PopularPicksSection() {
   return (
@@ -64,7 +64,7 @@ function PopularPicksSection() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function PopularPicksPage() {
@@ -80,7 +80,7 @@ function PopularPicksPage() {
         </PageContentWrapper>
       </DefaultThemeLayout>
     </>
-  )
+  );
 }
 
-export default PopularPicksPage
+export default PopularPicksPage;

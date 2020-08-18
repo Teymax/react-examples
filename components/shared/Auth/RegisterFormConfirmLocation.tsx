@@ -1,6 +1,6 @@
-import React from 'react'
-import { MultiFormHeader, FormProgressBar, MultiFormNav } from '../MultiForm'
-import { FormInput } from '@components/UI'
+import React from 'react';
+import { MultiFormHeader, FormProgressBar, MultiFormNav } from '../MultiForm';
+import { FormInput } from '@components/UI';
 
 const RegisterFormConfirmLocation = ({ next, step, formik }) => {
   return (
@@ -33,7 +33,7 @@ const RegisterFormConfirmLocation = ({ next, step, formik }) => {
         formik={formik}
       />
     </>
-  )
-}
+  );
+};
 
-export default RegisterFormConfirmLocation
+export default RegisterFormConfirmLocation;

@@ -1,12 +1,12 @@
-import React from 'react'
-import { AccountPointCards } from './PointCard'
-import { AccountInfoItems } from './InfoItem'
-import classNames from 'classnames'
-import { Button } from '@components/UI'
-import SectionGameHistory from './SectionGameHistory'
-import { useFormik, FormikProps } from 'formik'
-import { useSelector } from 'react-redux'
-import { RootState } from '@store/reducers'
+import React from 'react';
+import { AccountPointCards } from './PointCard';
+import { AccountInfoItems } from './InfoItem';
+import classNames from 'classnames';
+import { Button } from '@components/UI';
+import SectionGameHistory from './SectionGameHistory';
+import { useFormik, FormikProps } from 'formik';
+import { useSelector } from 'react-redux';
+import { RootState } from '@store/reducers';
 
 const SectionAccountManagementHeader = () => (
   <>
@@ -16,22 +16,22 @@ const SectionAccountManagementHeader = () => (
       <AccountPointCards />
     </div>
   </>
-)
+);
 
 interface IMyInfoFormProps {
-  email: string
-  timeZone: string
-  oddsFormat: string
-  username: string
-  firstName: string
-  lastName: string
-  state: string
-  birthdate: string
-  toReceiveOffers: boolean
+  email: string;
+  timeZone: string;
+  oddsFormat: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+  state: string;
+  birthdate: string;
+  toReceiveOffers: boolean;
 }
 
 const MyInfoFormBase = ({ formik }: { formik: FormikProps<IMyInfoFormProps> }) => {
-  const [isFormActive, setIsFormActive] = React.useState(false)
+  const [isFormActive, setIsFormActive] = React.useState(false);
 
   return (
     <form
@@ -51,11 +51,11 @@ const MyInfoFormBase = ({ formik }: { formik: FormikProps<IMyInfoFormProps> }) =
         </Button>
       </div>
     </form>
-  )
-}
+  );
+};
 
 const MyInfoForm = () => {
-  const { user } = useSelector((state: RootState) => ({ user: state.auth.user }))
+  const { user } = useSelector((state: RootState) => ({ user: state.auth.user }));
 
   const formik = useFormik<IMyInfoFormProps>({
     initialValues: {
@@ -70,12 +70,12 @@ const MyInfoForm = () => {
       toReceiveOffers: false,
     },
     onSubmit(value) {
-      console.log(value)
+      console.log(value);
     },
-  })
+  });
 
-  return <MyInfoFormBase formik={formik} />
-}
+  return <MyInfoFormBase formik={formik} />;
+};
 const SectionAccountManagement = () => {
   return (
     <section className='section account'>
@@ -88,7 +88,7 @@ const SectionAccountManagement = () => {
         <SectionGameHistory />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default SectionAccountManagement
+export default SectionAccountManagement;

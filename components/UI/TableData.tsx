@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function TableData({
   tableInfo,
@@ -7,12 +7,12 @@ function TableData({
   children,
 }: {
   tableInfo: {
-    headers?: string[]
-    body: any
-  }
-  renderRow: (item: any, index: number | string) => void
-  className?: string
-  children?: any
+    headers?: string[];
+    body: any;
+  };
+  renderRow: (item: any, index: number | string) => void;
+  className?: string;
+  children?: any;
 }) {
   return !tableInfo.body.length ? (
     <div>No data</div>
@@ -32,7 +32,7 @@ function TableData({
         {children}
       </tbody>
     </table>
-  )
+  );
 }
 
-export default TableData
+export default TableData;

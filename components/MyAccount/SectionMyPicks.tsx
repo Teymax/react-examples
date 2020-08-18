@@ -1,8 +1,8 @@
-import React from 'react'
-import { TableData } from '@components/UI'
-import { useDispatch, useSelector } from 'react-redux'
-import { betActions } from '@store/actions'
-import { RootState } from '@store/reducers'
+import React from 'react';
+import { TableData } from '@components/UI';
+import { useDispatch, useSelector } from 'react-redux';
+import { betActions } from '@store/actions';
+import { RootState } from '@store/reducers';
 
 const tableInfo = {
   headers: ['Date', 'Game', ''],
@@ -12,16 +12,16 @@ const tableInfo = {
       game: 'Global Soccer Challenge',
     },
   ],
-}
+};
 
 const SectionMyPicks = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const { bets } = useSelector((state: RootState) => ({ bets: state.bet.bets }))
+  const { bets } = useSelector((state: RootState) => ({ bets: state.bet.bets }));
 
   React.useEffect(() => {
-    dispatch(betActions.fetchBetsRequest())
-  }, [])
+    dispatch(betActions.fetchBetsRequest());
+  }, []);
 
   return (
     <section className='section picks'>
@@ -46,7 +46,7 @@ const SectionMyPicks = () => {
         />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default SectionMyPicks
+export default SectionMyPicks;

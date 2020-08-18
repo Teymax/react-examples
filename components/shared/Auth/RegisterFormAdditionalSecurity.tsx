@@ -1,8 +1,8 @@
-import React from 'react'
-import { MultiFormNav, MultiFormHeader, FormProgressBar } from '../MultiForm'
-import { FormInput } from '@components/UI'
-import { IMultiForm } from '@components/SignUp/RegistrationMultiFormBase'
-import { IRegisterFormState } from '@components/SignUp/RegistrationMultiForm'
+import React from 'react';
+import { MultiFormNav, MultiFormHeader, FormProgressBar } from '../MultiForm';
+import { FormInput } from '@components/UI';
+import { IMultiForm } from '@components/SignUp/RegistrationMultiFormBase';
+import { IRegisterFormState } from '@components/SignUp/RegistrationMultiForm';
 
 const RegisterFormAdditionalSecurity = ({
   actions: { next },
@@ -75,7 +75,7 @@ const RegisterFormAdditionalSecurity = ({
         />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default RegisterFormAdditionalSecurity
+export default RegisterFormAdditionalSecurity;

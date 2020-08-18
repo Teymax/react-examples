@@ -1,42 +1,42 @@
-import { IAction } from '@interfaces'
+import { IAction } from '@interfaces';
 
 export interface IGame {
-  name: string
-  id: number | string
+  name: string;
+  id: number | string;
 }
 
-export const GAME_ONE_ADD = 'GAME_ONE_ADD'
-export const GAME_MULTIPLE_ADD = 'GAME_MULTIPLE_ADD'
-export const GAME_FETCH = 'GAME_FETCH'
+export const GAME_ONE_ADD = 'GAME_ONE_ADD';
+export const GAME_MULTIPLE_ADD = 'GAME_MULTIPLE_ADD';
+export const GAME_FETCH = 'GAME_FETCH';
 
 export interface IAddOneGamePayload {
-  game: IGame
+  game: IGame;
 }
 
 interface IAddOneGameAction extends IAction {
-  type: typeof GAME_ONE_ADD
-  payload: IAddOneGamePayload
+  type: typeof GAME_ONE_ADD;
+  payload: IAddOneGamePayload;
 }
 
 export interface IAddMultipleGamePayload {
-  games: IGame[]
+  games: IGame[];
 }
 
 interface IAddMultipleGameAction extends IAction {
-  type: typeof GAME_MULTIPLE_ADD
-  payload: IAddMultipleGamePayload
+  type: typeof GAME_MULTIPLE_ADD;
+  payload: IAddMultipleGamePayload;
 }
 
 export interface IFetchGamePayload {
-  games: IGame[]
+  games: IGame[];
 }
 
 interface IFetchGameAction extends IAction {
-  type: typeof GAME_FETCH
-  payload: IFetchGamePayload
+  type: typeof GAME_FETCH;
+  payload: IFetchGamePayload;
 }
 
 export type GameActionType =
   | IAddOneGameAction
   | IAddMultipleGameAction
-  | IFetchGameAction
+  | IFetchGameAction;

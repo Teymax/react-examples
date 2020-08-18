@@ -1,8 +1,8 @@
-import React from 'react'
-import Head from 'next/head'
-import { PageContentWrapper, DefaultThemeLayout } from '@components/shared'
-import { Button } from '@components/UI'
-import Link from 'next/link'
+import React from 'react';
+import Head from 'next/head';
+import { PageContentWrapper, DefaultThemeLayout } from '@components/shared';
+import { Button } from '@components/UI';
+import Link from 'next/link';
 
 const ConfirmSection = () => (
   <section className='confirm-section'>
@@ -81,7 +81,7 @@ const ConfirmSection = () => (
       </div>
     </div>
   </section>
-)
+);
 
 function ConfirmationPage() {
   return (
@@ -96,7 +96,7 @@ function ConfirmationPage() {
         </PageContentWrapper>
       </DefaultThemeLayout>
     </>
-  )
+  );
 }
 
-export default ConfirmationPage
+export default ConfirmationPage;

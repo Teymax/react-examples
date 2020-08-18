@@ -4,15 +4,15 @@ import {
   GAME_ONE_ADD,
   GAME_FETCH,
   GameActionType,
-} from '@store/types/game.types'
+} from '@store/types/game.types';
 
 interface IGameState {
-  games: Array<IGame>
+  games: Array<IGame>;
 }
 
 const initialState: IGameState = {
   games: [],
-}
+};
 
 const reducer = (
   state: IGameState = initialState,
@@ -23,26 +23,26 @@ const reducer = (
       return {
         ...state,
         games: [...state.games, action.payload.game],
-      }
+      };
     case GAME_MULTIPLE_ADD:
       return {
         ...state,
         games: [...state.games, ...action.payload.games],
-      }
+      };
     case GAME_FETCH:
       return {
         ...state,
         games: action.payload.games,
-      }
+      };
     case GAME_MULTIPLE_ADD:
       return {
         ...state,
         games: [...state.games, ...action.payload.games],
-      }
+      };
 
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;

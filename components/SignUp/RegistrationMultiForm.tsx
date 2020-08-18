@@ -1,24 +1,24 @@
-import React from 'react'
-import RegistrationMultiFormBase from './RegistrationMultiFormBase'
-import { useFormik } from 'formik'
-import * as Yup from 'yup'
-import { userService } from '@services'
+import React from 'react';
+import RegistrationMultiFormBase from './RegistrationMultiFormBase';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { userService } from '@services';
 
 export interface IRegisterFormState {
-  email: string
-  birthDate: string
-  zipCode: string
-  firstName: string
-  lastName: string
-  password: string
-  username: string
-  favouriteSports: Array<string>
-  favouriteTeams: Array<string>
-  address: string
-  city: string
-  zip: string
-  phoneNumber: string
-  securityNumber: string
+  email: string;
+  birthDate: string;
+  zipCode: string;
+  firstName: string;
+  lastName: string;
+  password: string;
+  username: string;
+  favouriteSports: Array<string>;
+  favouriteTeams: Array<string>;
+  address: string;
+  city: string;
+  zip: string;
+  phoneNumber: string;
+  securityNumber: string;
 }
 
 function RegistrationMultiForm() {
@@ -70,13 +70,13 @@ function RegistrationMultiForm() {
       const registerData = {
         username: value.email,
         password: value.password,
-      }
+      };
 
-      userService.register(registerData).then(console.log)
+      userService.register(registerData).then(console.log);
     },
-  })
+  });
 
-  return <RegistrationMultiFormBase formik={formik} />
+  return <RegistrationMultiFormBase formik={formik} />;
 }
 
-export default RegistrationMultiForm
+export default RegistrationMultiForm;

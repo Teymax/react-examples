@@ -1,1 +1,1 @@
-export { default as SplashSection } from './SplashSection'
+export { default as SplashSection } from './SplashSection';

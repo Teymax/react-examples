@@ -1,1 +1,1 @@
-export { default as LeaderboardSection } from './LeaderboardSection'
+export { default as LeaderboardSection } from './LeaderboardSection';

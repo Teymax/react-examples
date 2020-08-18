@@ -1,21 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-import Countdown from 'react-countdown'
-import { Spinner, Container, Row, Col } from 'reactstrap'
-import Link from 'next/link'
-import { Carousel } from '@components/YDTheme'
-import YDLayout from '@components/YDTheme/YDLayout'
+import Countdown from 'react-countdown';
+import { Spinner, Container, Row, Col } from 'reactstrap';
+import Link from 'next/link';
+import { Carousel } from '@components/YDTheme';
+import YDLayout from '@components/YDTheme/YDLayout';
 
 export class Lobby extends React.Component {
-  static displayName = Lobby.name
-  static contextType = null
+  static displayName = Lobby.name;
+  static contextType = null;
 
-  state = { games: [], loading: true }
+  state = { games: [], loading: true };
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.getGamesSuccess = this.getGamesSuccess.bind(this)
-    this.getGamesError = this.getGamesError.bind(this)
+    this.getGamesSuccess = this.getGamesSuccess.bind(this);
+    this.getGamesError = this.getGamesError.bind(this);
   }
 
   componentDidMount() {
@@ -23,14 +23,14 @@ export class Lobby extends React.Component {
   }
 
   getGamesSuccess(response) {
-    this.setState({ games: response.data, loading: false })
+    this.setState({ games: response.data, loading: false });
   }
 
   getGamesError(error) {}
 
   render() {
     // Countdown completion
-    const Completionist = () => <span>Ended</span>
+    const Completionist = () => <span>Ended</span>;
 
     // Countdown Renderer callback with condition
     const countdownRenderer = ({
@@ -43,18 +43,18 @@ export class Lobby extends React.Component {
     }) => {
       if (completed) {
         // Render a completed state
-        return <Completionist />
+        return <Completionist />;
       } else {
-        var className = 'lobby-game-countdown-green'
+        var className = 'lobby-game-countdown-green';
 
         // 1 day
         if (total < 86400000) {
-          className = 'lobby-game-countdown-orange'
+          className = 'lobby-game-countdown-orange';
         }
 
         // 1 hour
         if (total < 3600000) {
-          className = 'lobby-game-countdown-red'
+          className = 'lobby-game-countdown-red';
         }
 
         return (
@@ -64,11 +64,11 @@ export class Lobby extends React.Component {
             {minutes > 0 ? minutes + 'm ' : ' '}
             {seconds}s
           </span>
-        )
+        );
       }
-    }
+    };
 
-    const isLoggedIn = false
+    const isLoggedIn = false;
     // this.context.isLoggedIn()
 
     return (
@@ -160,7 +160,7 @@ export class Lobby extends React.Component {
           )}
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -169,7 +169,7 @@ function YDHome() {
     <YDLayout>
       <Lobby />
     </YDLayout>
-  )
+  );
 }
 
-export default YDHome
+export default YDHome;

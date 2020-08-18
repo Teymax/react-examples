@@ -1,19 +1,19 @@
-import React from 'react'
-import { useFormik } from 'formik'
-import SignUpFormBase from './SignUpFormBase'
-import * as Yup from 'yup'
-import { userService } from '@services'
-import subYears from 'date-fns/subYears'
+import React from 'react';
+import { useFormik } from 'formik';
+import SignUpFormBase from './SignUpFormBase';
+import * as Yup from 'yup';
+import { userService } from '@services';
+import subYears from 'date-fns/subYears';
 
 export interface IRegisterProps {
-  email: string
-  password: string
-  username: string
-  firstName: string
-  lastName: string
-  state: string
-  birthDate: string
-  isOffersChecked: boolean
+  email: string;
+  password: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+  state: string;
+  birthDate: string;
+  isOffersChecked: boolean;
 }
 
 const SignUpForm = () => {
@@ -56,11 +56,11 @@ const SignUpForm = () => {
       isOffersChecked: Yup.boolean(),
     }),
     onSubmit(value) {
-      userService.register(value)
+      userService.register(value);
     },
-  })
+  });
 
-  return <SignUpFormBase formik={formik} />
-}
+  return <SignUpFormBase formik={formik} />;
+};
 
-export default SignUpForm
+export default SignUpForm;
