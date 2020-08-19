@@ -3,6 +3,8 @@ import { IAction } from '@interfaces';
 export interface IGame {
   name: string;
   id: number | string;
+  startDate: string;
+  sport: 'Baseball' | 'Soccer' | 'Boxing';
 }
 
 export const GAME_ONE_ADD = 'GAME_ONE_ADD';

@@ -1,5 +1,7 @@
 import React from 'react';
 import BaseBallSvg from '../../public/img/baseball.svg';
+import BoxingSvg from '../../public/img/boxing.svg';
+import SoccerSvg from '../../public/img/soccer.svg';
 import ArrowDownSvg from '../../public/img/arrow_down.svg';
 import Link from 'next/link';
 import { Label } from '@components/shared';
@@ -7,18 +9,39 @@ import { useSelector, useDispatch } from 'react-redux';
 import { IGame } from '@store/types/game.types';
 import { RootState } from '@store/reducers';
 import { gameActions } from '@store/actions';
+import format from 'date-fns/format';
+
+const getGameIcon = ({ sport }: IGame) => {
+  switch (sport) {
+    case 'Baseball':
+      return <BaseBallSvg />;
+
+    case 'Soccer':
+      return <SoccerSvg />;
+
+    case 'Boxing':
+      return <BoxingSvg />;
+
+    default:
+      break;
+  }
+};
 
 const GameListItem = ({ game }: { game: IGame }) => (
   <div className='game'>
     <div className='game__content'>
-      <div className='game__ball-icon'>
-        <BaseBallSvg />
-      </div>
+      <div className='game__ball-icon'>{getGameIcon(game)}</div>
 
       <div className='game__info'>
         <h4 className='game__title title title_subtitle'>{game.name}</h4>
         <div className='game__time title title_caption'>
-          Ends: APR 15, 6:00PM CDT
+          {/* APR 15, 6:00PM CDT */}
+          Ends:{' '}
+          {game.startDate ? (
+            format(new Date(game.startDate), 'MMM dd h:mm a O')
+          ) : (
+            <span style={{ color: 'red' }}>!No info!</span>
+          )}
         </div>
 
         <Label text='Prize: $50.00' className='game__price' />
